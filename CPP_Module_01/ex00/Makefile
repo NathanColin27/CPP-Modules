@@ -6,18 +6,19 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/26 09:55:16 by ncolin           ###   ########.fr        #
+#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
+NAME			= 
+
+SRCS			= 
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= megaphone
 
 all:			$(NAME)
 
@@ -32,9 +33,4 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-test:			$(NAME)
-				./megaphone "shhhhh... I think the students are asleep..."
-				./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-				./megaphone
-
-.PHONY:			all clean fclean re test
+.PHONY:			all clean fclean re
