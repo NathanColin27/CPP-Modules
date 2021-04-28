@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 20:48:03 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/28 20:48:04 by nathan           ###   ########.fr       */
+/*   Created: 2021/04/28 22:31:33 by nathan            #+#    #+#             */
+/*   Updated: 2021/04/28 23:19:44 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON__HPP
-#define WEAPON__HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <string>
 #include <iostream>
 #include <unistd.h>
 
-class Weapon
+class Fixed
 {
 	private:
-		std::string _type;
+		int 				_value;
+		static const int	_bits_number = 8;
+
 	public:
-		Weapon(std::string type);
-		Weapon();
-		~Weapon();
-		void				setType(std::string type);
-		const std::string	&getType(void) const;
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed& other);
+		
+		Fixed&	operator=(const Fixed& other);
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif

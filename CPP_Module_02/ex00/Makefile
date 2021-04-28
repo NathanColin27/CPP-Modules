@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
+#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
+#    Updated: 2021/04/28 22:30:52 by nathan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= 
+NAME			=	fixed
 
-SRCS			= 
+SRCS			=	Fixed.class.cpp\
+					main.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
