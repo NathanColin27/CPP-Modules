@@ -6,18 +6,18 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:12:59 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/25 23:11:06 by nathan           ###   ########.fr       */
+/*   Updated: 2021/04/27 22:44:13 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
+
 #include <string>
 #include <iostream>
 
 class Contact
 {
-	
     public:
         Contact();
 		~Contact();
