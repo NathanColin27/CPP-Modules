@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 11:11:18 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/28 11:37:10 by ncolin           ###   ########.fr       */
+/*   Created: 2021/04/28 13:04:18 by ncolin            #+#    #+#             */
+/*   Updated: 2021/04/28 15:18:58 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-#define ZOMBIEHORDE_HPP
+#ifndef HUMANA__HPP
+#define HUMANA__HPP
 
 #include <string>
 #include <iostream>
 #include <unistd.h>
-#include <fstream>
-#include <sys/time.h>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-class ZombieHorde
+class HumanA
 {
 	private:
-		int		_size;
-		Zombie	*_horde;
-
+		std::string	_name;
+		Weapon		&_weapon;
 	public:
-		ZombieHorde(int size);
-		~ZombieHorde();
-		std::string	random_name(void);
-		void		announce(void);
+		HumanA(std::string name, Weapon &weapon);
+		HumanA();
+		~HumanA();
+		void attack(void) const;
+		void setWeapon(Weapon &weapon);
 };
 
 #endif

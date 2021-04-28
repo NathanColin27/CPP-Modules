@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 11:11:18 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/28 11:37:10 by ncolin           ###   ########.fr       */
+/*   Created: 2021/04/28 13:04:23 by ncolin            #+#    #+#             */
+/*   Updated: 2021/04/28 15:22:50 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-#define ZOMBIEHORDE_HPP
+#include "HumanB.hpp"
 
-#include <string>
-#include <iostream>
-#include <unistd.h>
-#include <fstream>
-#include <sys/time.h>
-#include "Zombie.hpp"
-
-class ZombieHorde
+HumanB::HumanB(std::string name): _name(name)
 {
-	private:
-		int		_size;
-		Zombie	*_horde;
+}
 
-	public:
-		ZombieHorde(int size);
-		~ZombieHorde();
-		std::string	random_name(void);
-		void		announce(void);
-};
+HumanB::~HumanB() {
+}
 
-#endif
+void HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weapon = &weapon;
+}
+
+void HumanB::attack(void) const
+{
+	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+}

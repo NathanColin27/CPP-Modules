@@ -6,18 +6,22 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
+#    Updated: 2021/04/28 15:16:10 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= 
+NAME			= ex06
 
-SRCS			= 
+SRCS			=	main.cpp\
+					HumanA.cpp\
+					HumanB.cpp\
+					Weapon.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS		= -Wall -Wextra -Werror -I. 
 
 
 all:			$(NAME)

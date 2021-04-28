@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 11:11:18 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/28 11:37:10 by ncolin           ###   ########.fr       */
+/*   Created: 2021/04/28 12:00:35 by ncolin            #+#    #+#             */
+/*   Updated: 2021/04/28 12:19:41 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-#define ZOMBIEHORDE_HPP
-
-#include <string>
 #include <iostream>
-#include <unistd.h>
-#include <fstream>
-#include <sys/time.h>
-#include "Zombie.hpp"
+#include <string>
 
-class ZombieHorde
+int main(void)
 {
-	private:
-		int		_size;
-		Zombie	*_horde;
-
-	public:
-		ZombieHorde(int size);
-		~ZombieHorde();
-		std::string	random_name(void);
-		void		announce(void);
-};
-
-#endif
+	std::string str = "HI THIS IS BRAIN";
+	std::string* str_ptr = &str;
+	std::string& str_ref = str;
+	
+	std::cout << "By pointer	"<< *str_ptr << std::endl;
+	std::cout << "By reference	"<< str_ref << std::endl;
+	return()
+}

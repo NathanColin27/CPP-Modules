@@ -6,13 +6,13 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/28 16:27:18 by ncolin           ###   ########.fr        #
+#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= replace
+NAME			= 
 
-SRCS			= replace.cpp
+SRCS			= 
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
