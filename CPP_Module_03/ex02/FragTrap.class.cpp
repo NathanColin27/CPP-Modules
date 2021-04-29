@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/29 16:49:59 by ncolin            #+#    #+#             */
+/*   Updated: 2021/04/29 16:50:00 by ncolin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.class.hpp"
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
@@ -18,7 +30,7 @@ FragTrap::~FragTrap()
 	std::cout << "Argh arghargh death gurgle gurglegurgle urgh... death." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other)
+FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
 	*this = other;
 }

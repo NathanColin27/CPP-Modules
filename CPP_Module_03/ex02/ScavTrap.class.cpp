@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 14:31:12 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:32:20 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/29 16:48:51 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "I'll get you next time!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 {
 	*this = other;
 }
