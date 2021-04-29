@@ -17,8 +17,7 @@ private:
 	unsigned int	_melee_attack_damage;
 	unsigned int	_ranged_attack_damage;
 	unsigned int	_armor_damage_reduction;
-	
-	ClapTrap();
+
 public:
 	ClapTrap(std::string name);
 	virtual ~ClapTrap();

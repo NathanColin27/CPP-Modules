@@ -1,9 +1,5 @@
 #include "ClapTrap.class.hpp"
 
-ClapTrap::ClapTrap() 
-{
-}
-
 ClapTrap::ClapTrap(std::string name): _name(name)
 {
 	this->_hit_points = 100;
@@ -19,7 +15,7 @@ ClapTrap::ClapTrap(std::string name): _name(name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "I'll get you next time!" << std::endl;
+	std::cout << "Claptrap Destroyed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
@@ -42,13 +38,13 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other) {
 
 void	ClapTrap::rangedAttack(std::string const& target)
 {
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
+	std::cout << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
 	std::cout << "You're listening to 'Short-Range Damage Radio'." << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const& target)
 {
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
+	std::cout << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
 	std::cout << "Meet professor punch!" << std::endl;
 }
 

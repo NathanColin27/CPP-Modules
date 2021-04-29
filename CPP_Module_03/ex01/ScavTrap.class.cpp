@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 14:31:12 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 15:41:36 by ncolin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ScavTrap.class.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() 
 {
@@ -31,7 +19,7 @@ ScavTrap::ScavTrap(std::string name): _name(name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ClapTrap Destroyed!" << std::endl;
+	std::cout << "I'll get you next time!" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) {
@@ -54,13 +42,13 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other) {
 
 void	ScavTrap::rangedAttack(std::string const& target)
 {
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
+	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
 	std::cout << "You're listening to 'Short-Range Damage Radio'." << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const& target)
 {
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
+	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
 	std::cout << "Meet professor punch!" << std::endl;
 }
 
@@ -76,7 +64,7 @@ void	ScavTrap::takeDamage(unsigned int amount)
 		this->_hit_points = 0;
 	else
 		this->_hit_points -= amount;
-	std::cout << "SC4V-TP " << this->_name << " takes " << amount << " damages" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " takes " << amount << " damages" << std::endl;
 	if (amount > 0)
 		std::cout << "I'm leaking!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
@@ -87,21 +75,32 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	this->_hit_points += amount;
 	if (this->_hit_points > 100)
 		this->_hit_points = 100;
-	std::cout << "SC4V-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
 	std::cout << "Healsies!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(void)
 {
-std::string challenges[5] =
+	std::string attacks[5] =
 	{
-		"You versus me! Me versus you! Either way!",
-		"I will prove to you my robotic superiority!",
-		"Dance battle! Or, you know... regular battle.",
-		"Man versus machine! Very tiny streamlined machine!",
-		"Care to have a friendly duel?"
+		"I am a tornado of death and bullets!",
+		"Grenaaaade!",
+		"Bad guy go boom!", 
+		"Meat confetti!",
+		"There is now gunk on my chassis."
 	};
-	int challenge = rand() % 5;
-	std::cout << "SC4V-TP " << this->_name << " challenges you \"" << challenges[challenge] << "\"" << std::endl; 
+	this->_energy_points -= 25;
+	if (this->_energy_points < 0)
+	{
+		this->_energy_points = 0;
+		std::cout << "FR4G-TP " << this->_name << " is out of energy!" << std::endl;
+		return ;
+	}
+	else
+	{
+		int attack = rand() % 5;
+		int damage = rand() % 100 + 1;
+		std::cout << "FR4G-TP " << this->_name << " shouts \"" << attacks[attack] << "\" and inflicts " << damage << " points of damage to " << target << std::endl; 
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 13:19:06 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 14:35:13 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/29 16:21:07 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include "ClapTrap.class.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 private:
 	std::string		_name;
@@ -30,7 +31,6 @@ private:
 	unsigned int	_ranged_attack_damage;
 	unsigned int	_armor_damage_reduction;
 	
-	ScavTrap();
 public:
 	ScavTrap(std::string name);
 	virtual ~ScavTrap();
@@ -40,8 +40,6 @@ public:
 	
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
 	void	challengeNewcomer(void);
 };
 

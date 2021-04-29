@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 10:49:13 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 12:24:42 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/29 16:28:24 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include "ClapTrap.class.hpp"
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
 private:
 	std::string		_name;
@@ -30,18 +31,15 @@ private:
 	unsigned int	_ranged_attack_damage;
 	unsigned int	_armor_damage_reduction;
 	
-	FragTrap();
 public:
 	FragTrap(std::string name);
 	virtual ~FragTrap();
-	FragTrap(const FragTrap & x);
+	FragTrap(const FragTrap& other);
 
-	FragTrap&	operator=(const FragTrap & x);
+	FragTrap&	operator=(const FragTrap& other);
 	
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
 	void	vaulthunter_dot_exe(std::string const & target);
 };
 
