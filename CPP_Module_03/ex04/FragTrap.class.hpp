@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 10:49:13 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 14:57:45 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/30 15:35:23 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 #include <unistd.h>
 #include "ClapTrap.class.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
-private:
+	private:
 
-public:
-	FragTrap(std::string name);
-	virtual ~FragTrap();
-	FragTrap(const FragTrap& other);
+	public:
+		FragTrap(std::string name);
+		virtual ~FragTrap();
+		FragTrap(const FragTrap& other);
 
-	FragTrap&	operator=(const FragTrap& other);
-	
-	void	rangedAttack(std::string const & target);
-	void	meleeAttack(std::string const & target);
-	void	vaulthunter_dot_exe(std::string const & target);
+		FragTrap&	operator=(const FragTrap& other);
+		
+		void	rangedAttack(std::string const & target);
+		void	meleeAttack(std::string const & target);
+		void	vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

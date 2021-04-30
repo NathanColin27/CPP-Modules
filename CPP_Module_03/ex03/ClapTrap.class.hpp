@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:49:55 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:49:56 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/30 14:57:25 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hit_points;
 	unsigned int	_max_hit_points;

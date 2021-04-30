@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 12:01:03 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 14:57:53 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/04/30 15:35:15 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@
 #include "FragTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
-private:
+	private:
 
-public:
-	NinjaTrap(std::string name);
-	virtual ~NinjaTrap();
-	NinjaTrap(const NinjaTrap& other);
+	public:
+		NinjaTrap(std::string name);
+		virtual ~NinjaTrap();
+		NinjaTrap(const NinjaTrap& other);
 
-	NinjaTrap&	operator=(const NinjaTrap& other);
-	
-	void	rangedAttack(const std::string& target);
-	void	meleeAttack(const std::string& target);
-	void	ninjaShoebox(ClapTrap& clap);
-	void	ninjaShoebox(ScavTrap& scav);
-	void	ninjaShoebox(FragTrap& frag);
-	void	ninjaShoebox(NinjaTrap& ninja);
+		NinjaTrap&	operator=(const NinjaTrap& other);
+		
+		void	rangedAttack(const std::string& target);
+		void	meleeAttack(const std::string& target);
+		void	ninjaShoebox(ClapTrap& clap);
+		void	ninjaShoebox(ScavTrap& scav);
+		void	ninjaShoebox(FragTrap& frag);
+		void	ninjaShoebox(NinjaTrap& ninja);
 };
 
 
