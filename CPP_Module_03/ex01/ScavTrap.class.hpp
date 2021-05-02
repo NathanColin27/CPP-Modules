@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 13:19:06 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:49:36 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/02 20:20:21 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SCAVTRAP_HPP
 
 #include <string>
+#include <stdlib.h>
 #include <iostream>
 #include <unistd.h>
 

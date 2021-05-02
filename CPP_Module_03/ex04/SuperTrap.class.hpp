@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SuperTrap.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:41:47 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 15:36:04 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/02 20:26:24 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
 #include "FragTrap.class.hpp"
 #include "NinjaTrap.class.hpp"
 
@@ -30,8 +31,8 @@ class SuperTrap: public NinjaTrap, public FragTrap
 
 		SuperTrap&	operator=(const SuperTrap& other);
 		
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
+		using 	FragTrap::rangedAttack;
+		using	NinjaTrap::meleeAttack;
 };
 
 #endif

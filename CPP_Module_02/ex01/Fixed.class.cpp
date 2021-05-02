@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 22:31:50 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/28 23:43:44 by nathan           ###   ########.fr       */
+/*   Updated: 2021/04/28 23:45:46 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ Fixed::Fixed(int value)
 	this->_value = (value << Fixed::_fractional_bits); 
 }
 
-Fixed::Fixed(const Fixed &other)
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
-Fixed&		Fixed::operator=(const Fixed & x) 
+Fixed&		Fixed::operator=(const Fixed& other) 
 {
 	std::cout << "Assignation operator called" << std::endl;
-	if (this != &x)
+	if (this != &other)
 	{
-		this->_value = x.getRawBits();
+		this->_value = other.getRawBits();
 	}
     return *this;
 }

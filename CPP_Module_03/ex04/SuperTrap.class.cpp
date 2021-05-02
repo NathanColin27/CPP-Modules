@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SuperTrap.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:51:37 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 15:33:11 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/02 20:25:55 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ SuperTrap::SuperTrap(std::string name): ClapTrap(name), NinjaTrap(name),  FragTr
 	this->_melee_attack_damage = 30;
 	this->_ranged_attack_damage = 20;
 	this->_armor_damage_reduction = 5;
-	std::cout << "Hey everybody! Check out my package!" << std::endl;
+	std::cout << "Supertrap operationnal!" << std::endl;
 }
 
 SuperTrap::~SuperTrap()
 {
-	std::cout << "Argh arghargh death gurgle gurglegurgle urgh... death." << std::endl;
+	std::cout << "SuperTrap died ..." << std::endl;
 }
 
-SuperTrap::SuperTrap(const SuperTrap& other): ClapTrap(other)
+SuperTrap::SuperTrap(const SuperTrap& other): ClapTrap(other), NinjaTrap(other), FragTrap(other)
 {
 	*this = other;
 }
@@ -47,16 +47,4 @@ SuperTrap&	SuperTrap::operator=(const SuperTrap& other) {
 		this->_armor_damage_reduction =other._armor_damage_reduction;
 	}
     return *this;
-}
-
-void	SuperTrap::rangedAttack(std::string const& target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Eat bomb, baddie!" << std::endl;
-}
-
-void	SuperTrap::meleeAttack(std::string const& target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Pain school is now in session." << std::endl;
 }

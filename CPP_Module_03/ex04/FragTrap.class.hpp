@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 10:49:13 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 15:35:23 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/02 20:17:19 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
 #include "ClapTrap.class.hpp"
 
 class FragTrap : public virtual ClapTrap
