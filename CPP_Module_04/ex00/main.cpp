@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:03:03 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 14:54:00 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:21:49 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 
 int main()
 {
-	Sorcerer test("SHAZAM", "magicien");
-	std::cout << test << std::endl;
-	Victim test1("Jonathan");
-	std::cout << test1 << std::endl;
-	
-	test.polymorph(test1);
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	return 0;
 }

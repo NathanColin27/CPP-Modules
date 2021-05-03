@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:37:31 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 14:53:36 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:23:47 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ std::string const&  Sorcerer::get_name(void) const
 
 std::ostream& operator<<(std::ostream& os, Sorcerer const& sorcerer)
 {
-	os << "Fear me, I am " << sorcerer.get_name() << ", " << "the Great " << sorcerer.get_title() << "!" << std::endl;
+	os << "I am " << sorcerer.get_name() << ", " << sorcerer.get_title() << "!" << std::endl;
     return (os);
 }
 

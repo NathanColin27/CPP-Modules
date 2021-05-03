@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:37:33 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 15:07:53 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:12:38 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Victim::Victim()
 
 Victim::~Victim()
 {
-	std::cout << "Victim " << this->_name " just died for no apparent reason!" << std::endl;
+	std::cout << "Victim " << this->_name  <<" just died for no apparent reason!" << std::endl;
 }
 
 Victim::Victim(std::string name): _name(name)
