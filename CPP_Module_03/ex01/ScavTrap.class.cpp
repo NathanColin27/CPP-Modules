@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:49:28 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/02 20:20:02 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/03 12:58:36 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,6 @@ void	ScavTrap::challengeNewcomer(void)
 	{
 		int attack = rand() % 5;
 		int damage = rand() % 100 + 1;
-		std::cout << "FR4G-TP " << this->_name << " shouts \"" << attacks[attack] << "\" and inflicts " << damage << " points of damage to " << target << std::endl; 
+		std::cout << "FR4G-TP " << this->_name << " shouts \"" << attacks[attack] << "\" and inflicts " << damage << " points of damage to the newcomer" << std::endl; 
 	}
 }

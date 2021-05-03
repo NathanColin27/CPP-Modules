@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 12:00:35 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 12:57:23 by ncolin           ###   ########.fr       */
+/*   Created: 2021/05/03 13:03:03 by ncolin            #+#    #+#             */
+/*   Updated: 2021/05/03 14:54:00 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Peon.class.hpp"
+#include "Sorcerer.class.hpp"
+#include "Victim.class.hpp"
 
-int main(void)
+int main()
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string* str_ptr = &str;
-	std::string& str_ref = str;
+	Sorcerer test("SHAZAM", "magicien");
+	std::cout << test << std::endl;
+	Victim test1("Jonathan");
+	std::cout << test1 << std::endl;
 	
-	std::cout << "By pointer	"<< *str_ptr << std::endl;
-	std::cout << "By reference	"<< str_ref << std::endl;
-	return(0);
+	test.polymorph(test1);
 }
