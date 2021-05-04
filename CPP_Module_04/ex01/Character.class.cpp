@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:39:54 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 15:54:33 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/04 16:58:03 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::ostream & operator<<(std::ostream &os, Character const &);
 
 void Character::attack(Enemy *enemy)
 {
-	if (_weapon == NULL || _ap <= _weapon->getAPCost())
+	if (!enemy ||_weapon == NULL || _ap <= _weapon->getAPCost())
 		return ;
 	std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
 	_weapon->attack();
