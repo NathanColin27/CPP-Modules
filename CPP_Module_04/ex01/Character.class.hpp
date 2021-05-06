@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:30:52 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 15:53:12 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/05 13:00:57 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "AWeapon.class.hpp"
-#include "PlasmaRiffle.class.hpp"
+#include "PlasmaRifle.class.hpp"
 #include "PowerFist.class.hpp"
 #include "Enemy.class.hpp"
 #include "RadScorpion.class.hpp"

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRiffle.class.cpp                             :+:      :+:    :+:   */
+/*   PlasmaRifle.class.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRiffle.class.hpp"
+#include "PlasmaRifle.class.hpp"
 
-PlasmaRiffle::PlasmaRiffle(): AWeapon("PlasmaRiffle", 5, 21)
+PlasmaRifle::PlasmaRifle(): AWeapon("PlasmaRifle", 5, 21)
 {
 }
 
-PlasmaRiffle::~PlasmaRiffle() {
+PlasmaRifle::~PlasmaRifle() {
 }
 
-PlasmaRiffle::PlasmaRiffle(const PlasmaRiffle & other) {
+PlasmaRifle::PlasmaRifle(const PlasmaRifle & other) {
 	*this = other;
 }
 
 
-PlasmaRiffle&		PlasmaRiffle::operator=(const PlasmaRiffle & other)
+PlasmaRifle&		PlasmaRifle::operator=(const PlasmaRifle & other)
 {
 	if (this != &other) 
 	{
@@ -35,7 +35,7 @@ PlasmaRiffle&		PlasmaRiffle::operator=(const PlasmaRiffle & other)
     return *this;
 }
 
-void	PlasmaRiffle::attack(void) const
+void	PlasmaRifle::attack(void) const
 {
 	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

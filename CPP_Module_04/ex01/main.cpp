@@ -6,12 +6,12 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 11:15:40 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 16:55:09 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/05 17:23:37 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.class.hpp"
-#include "PlasmaRiffle.class.hpp"
+#include "PlasmaRifle.class.hpp"
 #include "PowerFist.class.hpp"
 #include "Enemy.class.hpp"
 #include "SuperMutant.class.hpp"
@@ -20,10 +20,10 @@
 
 int main(void)
 {
-	Character* me = new Character("me");
+	Character* me = new Character("Vault Boy");
 	std::cout << *me;
 	Enemy* b = new RadScorpion();
-	AWeapon* pr = new PlasmaRiffle();
+	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 	me->equip(pr);
 	std::cout << *me;
@@ -36,37 +36,38 @@ int main(void)
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	Enemy *mutant = new SuperMutant();
+	while (me->getAP() > me->getWeapon()->getAPCost())
+	{
+		std::cout << "SuperMutant HP: "<<mutant->getHP() << std::endl;
+		std::cout << std::endl;
+		me->attack(mutant);
+		std::cout << *me;
+	}
+	while (me->getAP() < 40)
+	{
+		me->recoverAP();
+	}
+	me->equip(pf);
+	std::cout << "SuperMutant HP: "<< mutant->getHP() << std::endl;
+	std::cout << std::endl;
+	me->attack(mutant);
+	std::cout << *me;
+	std::cout << "SuperMutant HP: "<< mutant->getHP() << std::endl;
+	std::cout << std::endl;
+	me->attack(mutant);
+	std::cout << *me;
+	std::cout << "SuperMutant HP: "<< mutant->getHP() << std::endl;
+	std::cout << std::endl;
+	me->attack(mutant);
+	std::cout << *me;
+	delete me;
+	delete pr;
+	delete pf;
 	return 0;
-	// PlasmaRiffle *Plasma = new PlasmaRiffle;
-	// SuperMutant  *Mutant = new SuperMutant;
-	// RadScorpion  *Rad = new RadScorpion;
-	// Character *Vault_boy = new Character;
-	// std::cout << Mutant->getHP() << std::endl;
-	// std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// std::cout << *Vault_boy << std::endl;
-	// Plasma->attack();
-	// Vault_boy->equip(Plasma);
-	// std::cout << *Vault_boy << std::endl;
-	// Vault_boy->attack(Rad);
-	// std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// std::cout << *Vault_boy << std::endl;
-	// Vault_boy->attack(Rad);
-	// std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// std::cout << *Vault_boy << std::endl;
-	// Vault_boy->attack(Rad);
-	// std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// std::cout << *Vault_boy << std::endl;
-	// Vault_boy->attack(Rad);
-	// std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// std::cout << *Vault_boy << std::endl;
-	// // Vault_boy->attack(Rad);
-	// // std::cout << "RadScorpion HP: " << Rad->getHP() << std::endl;
-	// // std::cout << *Vault_boy << std::endl;
-	// delete(Rad);
-
-	
-	// // delete (Plasma);
-	// // delete (Mutant);
-	// // delete (Vault_boy);
-	// return	(0);
 }

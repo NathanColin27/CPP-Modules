@@ -6,7 +6,7 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/04 12:26:20 by ncolin           ###   ########.fr        #
+#    Updated: 2021/05/05 13:00:57 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME			= wasteland
 SRCS			=	main.cpp\
 					Character.class.cpp\
 					Enemy.class.cpp\
-					PlasmaRiffle.class.cpp\
+					PlasmaRifle.class.cpp\
 					PowerFist.class.cpp\
 					RadScorpion.class.cpp\
 					SuperMutant.class.cpp\

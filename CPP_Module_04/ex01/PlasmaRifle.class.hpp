@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRiffle.class.hpp                             :+:      :+:    :+:   */
+/*   PlasmaRifle.class.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFFLE_HPP
-#define PLASMARIFFLE_HPP
+#ifndef PlasmaRifle_HPP
+#define PlasmaRifle_HPP
 
 #include <string>
 #include <iostream>
 #include <unistd.h>
 #include "AWeapon.class.hpp"
 
-class PlasmaRiffle: public AWeapon
+class PlasmaRifle: public AWeapon
 {
 	private:
 
 	public:
-		PlasmaRiffle();
-		// PlasmaRiffle(std::string const & name, int apcost, int damage);
-		PlasmaRiffle(const PlasmaRiffle & other);
-		~PlasmaRiffle();
+		PlasmaRifle();
+		PlasmaRifle(const PlasmaRifle & other);
+		~PlasmaRifle();
 
-		PlasmaRiffle&	operator=(const PlasmaRiffle & other);
+		PlasmaRifle&	operator=(const PlasmaRifle & other);
 
 		virtual void attack(void) const;
 };

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:39:54 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 16:58:03 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/05 17:19:23 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ Character&		Character::operator=(const Character & other) {
 void Character::recoverAP()
 {
 	this->_ap += 10;
-	std::cout << this->_name << "Regained 10 hp!" << std::endl;
+	std::cout << this->_name << " regained 10 hp!" << std::endl;
 	if (this->_ap >= 40)
 	{
-		std::cout << this->_name << "is fully rested!" << std::endl;
+		std::cout << this->_name << " is fully rested!" << std::endl;
 		this->_ap = 40;
 	}
 }
@@ -52,7 +52,7 @@ std::ostream & operator<<(std::ostream &os, Character const &);
 
 void Character::attack(Enemy *enemy)
 {
-	if (!enemy ||_weapon == NULL || _ap <= _weapon->getAPCost())
+	if (!enemy || _weapon == NULL || _ap <= _weapon->getAPCost())
 		return ;
 	std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
 	_weapon->attack();
@@ -60,7 +60,7 @@ void Character::attack(Enemy *enemy)
 	if (_ap <= 0)
 		_ap = 0;
 	enemy->takeDamage(_weapon->getDamage());
-	if(enemy->getHP() <= 0)
+	if (enemy->getHP() <= 0)
 		delete (enemy);
 }
 
