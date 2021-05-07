@@ -1,4 +1,4 @@
-#include "MateriaSource.hpp"
+#include "MateriaSource.class.hpp"
 
 MateriaSource::MateriaSource() {
 }
