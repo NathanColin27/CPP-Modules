@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:27:42 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 13:31:30 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/07 16:47:56 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ class MateriaSource: public IMateriaSource
 		~MateriaSource();
 
 		MateriaSource&	operator=(const MateriaSource & other);
+
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:16 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/26 10:44:24 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/15 16:15:32 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		while (i < argc)
 		{
 			std::string str(argv[i]);
-			for (std::string::size_type j = 0; j < str.length(); ++j)
+			for (size_t j = 0; j < str.length(); ++j)
 			{
 				std::cout << (char)std::toupper(argv[i][j]);
 			}

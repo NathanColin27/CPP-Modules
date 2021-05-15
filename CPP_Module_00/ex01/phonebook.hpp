@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:09 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/27 21:05:34 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/15 17:13:46 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@
 class Phonebook
 {
     private:
-        int count;
-        Contact contacts[8];
+        int _count;
+        Contact _contacts[8];
     
     public:
         Phonebook();
 		~Phonebook();
-        void add_contact(void);
+
+		int	 get_count(void);
+        void add_contact(int num);
         void search_contact(void);
         void display_phonebook(void);
 		void prompt_message(void);

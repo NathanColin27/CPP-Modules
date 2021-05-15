@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:02 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/25 23:06:58 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/15 17:14:47 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 		phonebook.prompt_message();
 		std::getline(std::cin, input);
 		if (input == "ADD")
-			phonebook.add_contact();
+			phonebook.add_contact(phonebook.get_count() + 1);
 		else if (input == "SEARCH")
 			phonebook.search_contact();
 		else if (input == "EXIT")

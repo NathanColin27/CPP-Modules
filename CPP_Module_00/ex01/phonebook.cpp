@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:06 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/26 00:04:40 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/15 17:26:07 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 
 Phonebook::Phonebook()
 {
-	this->count = 0;
+	_count = 0;
 }
 
-void Phonebook::add_contact(void)
+Phonebook::~Phonebook()
 {
-	if (this->count == 8)
+}
+
+int	 Phonebook::get_count(void)
+{
+	return this->_count;
+}
+
+void Phonebook::add_contact(int num)
+{
+	if (_count == 8)
 		std::cout << "Phonebook already full !" << std::endl;
 	else
 	{
-		this->contacts[this->count].enter_info();
-		count++;
+		_contacts[_count].enter_info(num);
+		_count++;
 	}
 }
 
@@ -39,7 +48,7 @@ void Phonebook::search_contact(void)
 {
 	int choice;
 	bool correct = false;
-	if (this->count == 0)
+	if (this->_count == 0)
 	{
 		std::cout << "You need to had a contact first" << std::endl;
 	}
@@ -51,28 +60,22 @@ void Phonebook::search_contact(void)
 		{
 			std::cout << "Please enter the number of an existing contact" << std::endl;
 			std::cin >> choice;
-			if (choice > 0 && choice < this->count)
+			if (choice > 0 && choice <= this->_count)
 			{
-				this->contacts[choice].display_contact();
+				this->_contacts[choice - 1].display_contact();
 				correct = true;
 			}
 		}
 	}
 }
 
-void Phonebook::print_row(std::string infos[])
-{
-	for (int i = 0; i < 4; i++)
-	{
-		std::cout << "|";
-		std::cout << infos[i];
-	}
-	std::cout << "|" << std::endl;
-}
 
 void Phonebook::display_phonebook(void)
 {
-	std::string header[4] = {"index", "first name" , "last_name", "nickname"};
-	std::cout << std::setfill('-') << std::setw(56);
-	this->print_row(header);
+	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
+	for (int i = 0; i < this->_count; i++)
+		this->_contacts[i].contact_summary();
+	std::cout << "|-------------------------------------------|" << std::endl;
 }
