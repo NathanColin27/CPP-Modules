@@ -1,0 +1,39 @@
+#include "__user_class_name.hpp"
+
+// constructors & destructors
+
+__user_class_name::__user_class_name()
+{
+}
+
+__user_class_name::~__user_class_name()
+{
+}
+
+__user_class_name::__user_class_name(const __user_class_name &other)
+{
+	*this = other;
+}
+
+// Operator overloads
+
+__user_class_name&		__user_class_name::operator=(const __user_class_name & other) 
+{
+	if (this != &other)
+	{
+		this->a = other.a;
+	}
+	return (*this);
+}
+
+std::ostream &operator<<(std::ostream &os, __user_class_name const &other)
+{
+	os << "" << std::endl;
+	return (os);
+}
+
+// Getters and Setters
+
+// Member functions
+
+// Exceptions

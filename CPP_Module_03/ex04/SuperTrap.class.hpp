@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:41:47 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/02 20:26:24 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/06 20:05:55 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class SuperTrap: public NinjaTrap, public FragTrap
 		virtual ~SuperTrap();
 
 		SuperTrap&	operator=(const SuperTrap& other);
-		
-		using 	FragTrap::rangedAttack;
+
+		using	FragTrap::rangedAttack;
 		using	NinjaTrap::meleeAttack;
 };
 

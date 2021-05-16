@@ -1,0 +1,33 @@
+#ifndef user_HPP_name
+#define user_HPP_name
+
+#include <string>
+#include <iostream>
+#include <unistd.h>
+
+class __user_class_name
+{
+	private:
+
+	public:
+		// constructors & destructors
+
+		__user_class_name();
+		__user_class_name(const __user_class_name & x);
+		virtual ~__user_class_name();
+
+		// Operator overloads
+
+		__user_class_name&	operator=(const __user_class_name & x);
+		
+		// Getters and Setters
+
+		// Member functions
+
+		// Exceptions
+
+};
+
+std::ostream &operator<<(std::ostream &os, __user_class_name const &other);
+
+#endif
