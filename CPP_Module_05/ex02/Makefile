@@ -6,11 +6,11 @@
 #    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/16 23:22:33 by nathan           ###   ########.fr        #
+#    Updated: 2021/05/17 10:53:46 by nathan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= Forms
+NAME			= More_Forms
 
 SRCS			=	Bureaucrat.class.cpp\
 					Form.class.cpp\
