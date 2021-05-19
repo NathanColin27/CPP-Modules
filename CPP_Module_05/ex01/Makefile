@@ -3,22 +3,25 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
+#    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/19 18:06:19 by nathan           ###   ########.fr        #
+#    Updated: 2021/05/16 18:23:39 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= convert
+NAME			= Forms
 
-SRCS			=	scalarConverter.class.cpp\
+SRCS			=	Bureaucrat.class.cpp\
+					Form.class.cpp\
 					main.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
+
 
 all:			$(NAME)
 

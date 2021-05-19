@@ -5,6 +5,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <sstream>
+#include <algorithm>
 
 class scalarConverter
 {

@@ -1,5 +1,5 @@
 #include "scalarConverter.class.hpp"
-
+#include <climits>
 // constructors & destructors
 
 scalarConverter::scalarConverter(std::string value): _value(value)
@@ -26,31 +26,37 @@ scalarConverter&		scalarConverter::operator=(const scalarConverter & other)
 	return (*this);
 }
 
-std::ostream &operator<<(std::ostream &os, scalarConverter const &other)
-{
-	os << "" << std::endl;
-	return (os);
-}
-
 // Getters and Setters
 
 // Member functions
 
 bool	scalarConverter::isChar(std::string arg)
 {
+	// std::cout << " length : " << arg.length() << " front : "  << arg.front()  << " back : "  << arg.back()<< std::endl;
+
 	if (arg.length() == 3 && arg.front() == '\'' && arg.back() == '\'')
 		return (true);
+	return (false);
 }
 
 bool	scalarConverter::isFloat(std::string arg)
 {
-	//Special cases
-	if (arg == "+inf" || arg == "-inf" || arg == "nan")
+	if (arg == "+inff" || arg == "-inff" || arg == "nanf")
 		return (true);
-	//Remove sign
+	if (arg.back() != 'f')
+		return(false);
+	else
+		arg.resize(arg.size () - 1);
 	if (arg[0] == '-' || arg[0] == '+')
 		arg = arg.substr(1);
-	if ()
+	if (arg.front() == '.' || arg.back() == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
+		return (false);
+	for (size_t i = 0; i < arg.length(); i++)
+	{
+		if (!isdigit(arg[i]) && !(arg[i] == '.'))
+			return (false);
+	}
+	return (true);
 }
 
 bool	scalarConverter::isInt(std::string arg)
@@ -59,30 +65,61 @@ bool	scalarConverter::isInt(std::string arg)
 	if (arg[0] == '-' || arg[0] == '+')
 		arg = arg.substr(1);
 	//Int Check
-	for (int i = 0; i < arg.length(); i++)
+	for (size_t i = 0; i < arg.length(); i++)
 	{
 		if (!isdigit(arg[i]))
 			return (false);
 	}
-	if (stol(arg) < INT_MIN || stol(arg) > INT_MAX)
+	if (stol(arg) < INT32_MIN || stol(arg) > INT32_MAX)
 		return (false);
 	return (true);
 }
 
 bool	scalarConverter::isDouble(std::string arg)
 {
-
+	//Special cases
+	if (arg == "+inf" || arg == "-inf" || arg == "nan")
+		return (true);
+	//Remove sign
+	if (arg[0] == '-' || arg[0] == '+')
+		arg = arg.substr(1);
+	if (arg.front() == '.' || arg.back() == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
+		return (false);
+	for (size_t i = 0; i < arg.length(); i++)
+	{
+		if (!isdigit(arg[i]) && !(arg[i] == '.'))
+			return (false);
+	}
+	return (true);
 }
 
 
-bool scalarConverter::check_arg()
+
+std::stringstream	convToFloat(std::string value)
 {
-	std::string arg = this->_value;
-	//Are all the characters printable ?
-
-	//Single Char Check
-	
-
+	std::stringstream res;
+	if (value == "nanf" || value == "+inff" || value == "-inff")
+		res << value;
+	else
+	{
+		value.resize(value.size() - 1);
+		res << value;
+	}
+	return (res);
 }
 
+std::stringstream	convToDouble(std::string value)
+{
+	std::stringstream res;
+	if (value == "nanf" || value == "+inff" || value == "-inff")
+		res << value;
+	else
+	{
+		value.resize(value.size() - 1);
+		res << value;
+	}
+	return (res);
+}
+int		convToInt(std::string value);
+char	convToChar(std::string value);
 // Exceptions
