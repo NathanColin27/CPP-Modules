@@ -3,23 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
+#    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/17 15:29:09 by nathan           ###   ########.fr        #
+#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= Intern
+NAME			= 
 
-SRCS			=	Bureaucrat.class.cpp\
-					Form.class.cpp\
-					PresidentialPardonForm.class.cpp\
-					RobotomyRequestForm.class.cpp\
-					ShrubberyCreationForm.class.cpp\
-					Intern.class.cpp\
-					main.cpp
-
+SRCS			= 
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
