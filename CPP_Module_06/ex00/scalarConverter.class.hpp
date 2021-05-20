@@ -3,15 +3,17 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <unistd.h>
 #include <sstream>
 #include <algorithm>
+#include <math.h> 
 
 class scalarConverter
 {
 	private:
 		std::string _value;
-		scalarConverter();
+		
 	public:
 		// constructors & destructors
 		scalarConverter(std::string value);
@@ -31,10 +33,10 @@ class scalarConverter
 		bool	isInt(std::string value);
 		bool	isDouble(std::string value);
 		
-		float	convToFloat(std::string value);
+		double	convToFloat(std::string value);
 		double	convToDouble(std::string value);
-		int		convToInt(std::string value);
-		char	convToChar(std::string value);
+		double	convToInt(std::string value);
+		double	convToChar(std::string value);
 
 		// Exceptions
 

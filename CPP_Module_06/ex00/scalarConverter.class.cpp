@@ -1,5 +1,5 @@
 #include "scalarConverter.class.hpp"
-#include <climits>
+
 // constructors & destructors
 
 scalarConverter::scalarConverter(std::string value): _value(value)
@@ -93,33 +93,37 @@ bool	scalarConverter::isDouble(std::string arg)
 	return (true);
 }
 
-
-
-std::stringstream	convToFloat(std::string value)
+double	scalarConverter::convToFloat(std::string value)
 {
+	double ret;
 	std::stringstream res;
-	if (value == "nanf" || value == "+inff" || value == "-inff")
-		res << value;
-	else
-	{
-		value.resize(value.size() - 1);
-		res << value;
-	}
-	return (res);
+	value.resize(value.size() - 1);
+	res << value;
+	res >> ret;
+	return (ret);
 }
 
-std::stringstream	convToDouble(std::string value)
+double	scalarConverter::convToDouble(std::string value)
 {
+	double ret;
 	std::stringstream res;
-	if (value == "nanf" || value == "+inff" || value == "-inff")
-		res << value;
-	else
-	{
-		value.resize(value.size() - 1);
-		res << value;
-	}
-	return (res);
+	res << value;
+	res >> ret;
+	return (ret);
 }
-int		convToInt(std::string value);
-char	convToChar(std::string value);
+
+double		scalarConverter::convToInt(std::string value)
+{
+	double ret;
+	std::stringstream res(value);
+	res >> ret;
+	return (ret);
+}
+
+double		scalarConverter::convToChar(std::string value)
+{
+	double ret;
+	ret = value[1];
+	return (ret);
+}
 // Exceptions
