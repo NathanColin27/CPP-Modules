@@ -6,13 +6,18 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/26 10:33:27 by ncolin           ###   ########.fr        #
+#    Updated: 2021/05/20 16:15:53 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= 
+NAME			= realtype
 
-SRCS			= 
+SRCS			= 	main.cpp\
+					A.class.cpp\
+					B.class.cpp\
+					C.class.cpp\
+					Base.class.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++

@@ -6,13 +6,11 @@ int main(void)
 
 	void *raw;
 	Data *data;
-	for (int i = 0; i++ < 5;)
-	{raw = serialize();
+	raw = serialize();
 	data = deserialize(raw);
 	std::cout << "data->n = " << data->n << std::endl;
 	std::cout << "data->str1 = " << data->str1 << std::endl;
 	std::cout << "data->str2 = " << data->str2 << std::endl;
-	std::cout << "------------------------------------"<< std::endl;
-	delete data;}
+	delete data;
 	return 0;
 }
