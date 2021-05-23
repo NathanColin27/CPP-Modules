@@ -25,8 +25,11 @@ class Array
 		}
 		Array(const Array &other)
 		{	
-			this->_arr = new T[other->_size];
-			this = other;
+			this->_arr = new T[other._size];
+			this->_size = other._size;
+			for (size_t i = 0; i < this->_size; i++)
+				this->_arr[i] = other._arr[i];
+			// this = other;
 		}
 		virtual ~Array()
 		{
@@ -37,24 +40,17 @@ class Array
 
 		Array&	operator=(const Array &other)
 		{
-			this ->_size = other->size;
+			this ->_size = other._size;
 			for (size_t i = 0; i < this->_size; i++)
-				this->_arr[i] = other->_arr[i];
+				this->_arr[i] = other._arr[i];
 			return (*this);
 		}
 
 		T&	operator[](size_t index)
 		{
-			try
-			{
-				if (index >= _size || index < 0)
-					throw(std::exception());
-				return (this->_arr[index]);
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-			}
+			if (index >= _size || index < 0)
+				throw(outOfBoundException());
+			return (this->_arr[index]);
 		}
 		
 		// Getters and Setters
@@ -80,6 +76,7 @@ class Array
 				}
 		};
 };
+
 template<typename T>
 std::ostream &operator<<(std::ostream &os, Array<T> const &other)
 {
