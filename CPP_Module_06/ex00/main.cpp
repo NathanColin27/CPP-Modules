@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:54:51 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/20 11:48:23 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/23 11:35:24 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int main(int ac, char **av)
 		std::cout << "double: " << std::fixed<<std::setprecision(1) << tmp << std::endl;
 	}
 	else
-	{std::cout << "float: " << static_cast<float>(tmp) << "f" << std::endl;
-	std::cout << "double: " << tmp << std::endl;}
+	{
+		std::cout << "float: " << static_cast<float>(tmp) << "f" << std::endl;
+		std::cout << "double: " << tmp << std::endl;
+	}
 }
