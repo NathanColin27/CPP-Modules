@@ -3,14 +3,15 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 #include <unistd.h>
+#include <list>
 
 class Span
 {
 	private:
-		int			*_arr;
-		int const	_size;
-		int			_len;
+		std::list<int>	_numbers;
+		size_t			_size;
 		Span();
 	public:
 		// constructors & destructors
@@ -24,13 +25,14 @@ class Span
 		
 		// Getters and Setters
 
+		std::list<int>&	getNumbers(void);
 		// Member functions
 		void	addNumber(int num);
-		void	addNumber(std::iterator<int, int> range);
 		int		shortestSpan(void);
 		int		longestSpan(void);
 		// Exceptions
 
 };
+
 
 #endif
