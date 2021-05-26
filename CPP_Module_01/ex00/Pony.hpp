@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 21:01:19 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/27 22:43:59 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/26 15:49:39 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include <string>
 #include <iostream>
 
+
 class Pony
 {
 	private:
-		int			_age;
-		std::string	_name;
+		unsigned int	_age;
+		std::string		_name;
 		
 	public:
 		Pony();
