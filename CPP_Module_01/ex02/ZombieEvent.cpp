@@ -6,17 +6,21 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 02:10:06 by nathan            #+#    #+#             */
-/*   Updated: 2021/04/28 03:29:27 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/26 21:53:39 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent() {
-	this->_type = "default";
+ZombieEvent::ZombieEvent()
+{
+	this->_type = "None";
+	std::cout << "ZombieEvent created" << std::endl;
 }
 
-ZombieEvent::~ZombieEvent() {
+ZombieEvent::~ZombieEvent()
+{
+	std::cout << "ZombieEvent destroyed" << std::endl;
 }
 
 void	ZombieEvent::setZombieType(std::string type)
@@ -41,5 +45,6 @@ void ZombieEvent::randomChump(void)
 	
 	Zombie *zomb = new Zombie(name, this->_type);
 	zomb->announce();
+	delete zomb;
 }
 

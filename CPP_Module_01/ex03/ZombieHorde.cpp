@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 11:11:15 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/28 11:59:36 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/26 22:14:31 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,13 @@ ZombieHorde::ZombieHorde(int size)
 	
 	for (int i = 0; i < size; i++)
 	{
-		_horde[i] = Zombie(ZombieHorde::random_name(), "default");
+		_horde[i].setName(ZombieHorde::random_name());
 	}
 	std::cout << "horde of " << this->_size << " zombies created" << std::endl;
 }
 
-ZombieHorde::~ZombieHorde() {
+ZombieHorde::~ZombieHorde()
+{
 	delete [] this->_horde;
 	std::cout << "Horde deleted" << std::endl; 
 }

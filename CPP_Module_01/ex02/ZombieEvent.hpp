@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
+#include <cstdlib>
 #include <fstream>
 #include <time.h>
 #include "Zombie.hpp"

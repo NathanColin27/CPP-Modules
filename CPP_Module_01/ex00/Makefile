@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
+#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/26 15:35:33 by ncolin           ###   ########.fr        #
+#    Updated: 2021/05/26 21:10:04 by nathan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= pony
+NAME			=	pony
 
 SRCS			=	Pony.cpp\
 					main.cpp

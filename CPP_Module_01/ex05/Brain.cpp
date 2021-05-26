@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 12:20:48 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/28 12:59:58 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/26 22:21:25 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain() {
+Brain::Brain()
+{
 	this->_weight = 3;
 }
 
-Brain::~Brain() {
+Brain::~Brain()
+{
 }
 
 std::string Brain::identify() const
