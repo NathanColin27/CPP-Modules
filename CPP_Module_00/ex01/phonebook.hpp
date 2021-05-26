@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:09 by nathan            #+#    #+#             */
-/*   Updated: 2021/05/15 17:13:46 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/26 14:18:41 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <iomanip> 
 #include <string>
+#include <sstream>
 #include "contact.hpp"
 
 class Phonebook

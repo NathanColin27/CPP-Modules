@@ -6,35 +6,56 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/04/26 09:55:16 by ncolin           ###   ########.fr        #
+#    Updated: 2021/05/26 12:53:49 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME			= megaphone
+
 SRCS			= megaphone.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -I. 
 
-NAME			= megaphone
+OS = $(shell uname -s)
+ifeq ($(OS), Linux)
+	TICK = \342\234\224
+	RE = \342\231\272
+	TRASH = \360\237\227\221
+else
+	TICK = \xE2\x9C\x94
+	RE = \xE2\x99\xBA
+	TRASH = \xF0\x9F\x97\x91
+endif
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) 
+				@echo "\033[32;1m\r$(NAME) compiled ${TICK}          \033[0m"
 
 clean:
-				$(RM) $(OBJS)
+				@$(RM) $(OBJS)
+				@echo "\033[32;1m\rDirectory cleaned ${TRASH}          \033[0m"
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
+				@echo "\033[32;1m\rDirectory fully cleaned ${TRASH} ${TRASH} ${TRASH}          \033[0m"
 
-re:				fclean $(NAME)
+re:				
+				@echo "\033[32;1m\r$(NAME) recompiling ${RE}          \033[0m"
+				@make -s fclean 
+				@make -s all
 
 test:			$(NAME)
 				./megaphone "shhhhh... I think the students are asleep..."
 				./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
+				./megaphone AAAAAAAA
+				./megaphone ""
+				./megaphone ''
 				./megaphone
 
 .PHONY:			all clean fclean re test

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 22:13:06 by nathan            #+#    #+#             */
-/*   Updated: 2021/05/15 17:26:07 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/26 14:37:29 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,25 @@ void Phonebook::prompt_message(void)
 			  << std::endl;
 }
 
+int get_int(int min, int max, std::string prompt)
+{
+	int ret_integer;
+	std::string str_number;
+
+	while(true) {
+
+		std::cout << prompt;
+		std::getline(std::cin, str_number);
+		std::stringstream convert(str_number);
+
+		if(convert >> ret_integer && !(convert >> str_number) && ret_integer >= min && ret_integer <=max)
+			return ret_integer;
+
+		std::cin.clear();
+		std::cerr << "Input must be >= " << min << " and <= " << max << ". Please try again.\n";
+	}
+}
+
 void Phonebook::search_contact(void)
 {
 	int choice;
@@ -55,19 +74,21 @@ void Phonebook::search_contact(void)
 	else
 	{
 		this->display_phonebook();
-		std::cout << "Which contact to you wish to display ?" << std::endl;
-		while (!correct)
+
+		choice = get_int(1, this->_count, "Which contact do you wish to display ?\n");
+		
+		if (choice < 1 || choice > this->_count)
 		{
-			std::cout << "Please enter the number of an existing contact" << std::endl;
-			std::cin >> choice;
-			if (choice > 0 && choice <= this->_count)
-			{
-				this->_contacts[choice - 1].display_contact();
-				correct = true;
-			}
+			std::cout << "This contact does not exist" << std::endl;
+		}
+		else
+		{
+			this->_contacts[choice - 1].display_contact();
+			correct = true;
 		}
 	}
 }
+
 
 
 void Phonebook::display_phonebook(void)
