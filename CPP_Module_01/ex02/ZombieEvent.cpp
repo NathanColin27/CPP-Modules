@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 02:10:06 by nathan            #+#    #+#             */
-/*   Updated: 2021/05/26 21:53:39 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/27 09:36:33 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void ZombieEvent::randomChump(void)
 	for (int i = 0; i < number; i++)
 		std::getline(file, name);
 	
-	Zombie *zomb = new Zombie(name, this->_type);
-	zomb->announce();
-	delete zomb;
+	Zombie zomb(name, this->_type);
+	zomb.announce();
 }
 
