@@ -24,6 +24,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap& other) {
 	*this = other;
+	std::cout << "Hey everybody! I'm a clone " << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other) {
@@ -55,7 +56,10 @@ void	FragTrap::meleeAttack(std::string const& target)
 void	FragTrap::takeDamage(unsigned int amount)
 {
 	if (amount <= this->_armor_damage_reduction)
-		amount = _armor_damage_reduction;
+	{
+		std::cout << "Armor blocked the damage" << std::endl;
+		amount = 0;
+	}	
 	else
 		amount = amount - this->_armor_damage_reduction;
 	if (amount > this->_max_hit_points)
