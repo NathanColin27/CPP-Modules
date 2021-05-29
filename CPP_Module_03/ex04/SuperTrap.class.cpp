@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:51:37 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/02 20:25:55 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/29 23:12:17 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ SuperTrap::SuperTrap(std::string name): ClapTrap(name), NinjaTrap(name),  FragTr
 {
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
-	this->_energy_points = 100;
+	this->_energy_points = 120;
 	this->_max_energy_points = 100;
 	this->_level = 1;
-	this->_melee_attack_damage = 30;
+	this->_melee_attack_damage = 60;
 	this->_ranged_attack_damage = 20;
 	this->_armor_damage_reduction = 5;
 	std::cout << "Supertrap operationnal!" << std::endl;

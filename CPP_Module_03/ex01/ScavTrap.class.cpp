@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:49:28 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 12:58:36 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:20:25 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,23 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other) {
 
 void	ScavTrap::rangedAttack(std::string const& target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
+	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
 	std::cout << "You're listening to 'Short-Range Damage Radio'." << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const& target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
+	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
 	std::cout << "Meet professor punch!" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
 	if (amount <= this->_armor_damage_reduction)
+	{
+		std::cout << "Armor blocked the damage" << std::endl;
 		amount = 0;
+	}	
 	else
 		amount = amount - this->_armor_damage_reduction;
 	if (amount > this->_max_hit_points)
@@ -76,19 +79,23 @@ void	ScavTrap::takeDamage(unsigned int amount)
 		this->_hit_points = 0;
 	else
 		this->_hit_points -= amount;
-	std::cout << "FR4G-TP " << this->_name << " takes " << amount << " damages" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " takes " << amount << " damages" << std::endl;
 	if (amount > 0)
-		std::cout << "I'm leaking!" << std::endl;
+		std::cout << "Why do I even feel pain?!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
+	int test = this->_hit_points;
 	this->_hit_points += amount;
 	if (this->_hit_points > 100)
+	{
 		this->_hit_points = 100;
-	std::cout << "FR4G-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
-	std::cout << "Healsies!" << std::endl;
+		amount = this->_hit_points - test;
+	}
+	std::cout << "SC4V-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
+	std::cout << "Sweet life juice!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
 }
 
@@ -106,13 +113,13 @@ void	ScavTrap::challengeNewcomer(void)
 	if (this->_energy_points < 0)
 	{
 		this->_energy_points = 0;
-		std::cout << "FR4G-TP " << this->_name << " is out of energy!" << std::endl;
+		std::cout << "SC4V-TP " << this->_name << " is out of energy!" << std::endl;
 		return ;
 	}
 	else
 	{
 		int attack = rand() % 5;
 		int damage = rand() % 100 + 1;
-		std::cout << "FR4G-TP " << this->_name << " shouts \"" << attacks[attack] << "\" and inflicts " << damage << " points of damage to the newcomer" << std::endl; 
+		std::cout << "SC4V-TP " << this->_name << " shouts \"" << attacks[attack] << "\" and inflicts " << damage << " points of damage to the newcomer" << std::endl; 
 	}
 }

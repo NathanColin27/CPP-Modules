@@ -76,9 +76,13 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
+	int test = this->_hit_points;
 	this->_hit_points += amount;
 	if (this->_hit_points > 100)
+	{
 		this->_hit_points = 100;
+		amount = this->_hit_points - test;
+	}
 	std::cout << "FR4G-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
 	std::cout << "Sweet life juice!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
@@ -95,7 +99,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		"There is now gunk on my chassis."
 	};
 	this->_energy_points -= 25;
-	if (this->_energy_points < 0)
+	if (this->_energy_points >= _max_energy_points)
 	{
 		this->_energy_points = 0;
 		std::cout << "FR4G-TP " << this->_name << " is out of energy!" << std::endl;

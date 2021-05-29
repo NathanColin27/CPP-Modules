@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 14:41:47 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/06 20:05:55 by nathan           ###   ########.fr       */
+/*   Updated: 2021/05/29 23:18:57 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@
 #include "FragTrap.class.hpp"
 #include "NinjaTrap.class.hpp"
 
-class SuperTrap: public NinjaTrap, public FragTrap
+class SuperTrap: virtual public NinjaTrap, virtual public FragTrap
 {
-	private:
-
 	public:
 		SuperTrap(std::string name);
 		SuperTrap(const SuperTrap& other);

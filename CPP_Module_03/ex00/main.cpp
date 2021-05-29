@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 11:37:21 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/28 16:58:52 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:01:29 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,20 @@ int main(void)
 		on_stack.takeDamage(200);
 		std::cout << std::endl;
 	}
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.vaulthunter_dot_exe("Corrector");
-	// fr4gtp.takeDamage(150);
-	// fr4gtp.beRepaired(30);
+	
+	std::cout << std::endl << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+	std::cout << "|--------------Random attacks----------------|" << std::endl;
+	std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl << std::endl;
+	
+	{
+		FragTrap on_stack("Claptrap");
+		on_stack.vaulthunter_dot_exe("Corrector");
+		on_stack.vaulthunter_dot_exe("Corrector");
+		on_stack.vaulthunter_dot_exe("Corrector");
+		on_stack.vaulthunter_dot_exe("Corrector");
+		on_stack.vaulthunter_dot_exe("Corrector");
+		on_stack.vaulthunter_dot_exe("Corrector");
+	}
+	
 	return (0);
 }

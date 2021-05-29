@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 10:49:13 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 12:24:42 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:10:52 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FRAGTRAP_HPP
 
 #include <string>
+#include <stdlib.h>
 #include <iostream>
 #include <unistd.h>
 

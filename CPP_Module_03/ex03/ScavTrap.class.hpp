@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 13:19:06 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 14:58:03 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:29:13 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,19 @@
 
 #include <string>
 #include <iostream>
+#include <stdlib.h>
 #include <unistd.h>
 #include "ClapTrap.class.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	private:
-
 	public:
 		ScavTrap(std::string name);
-		virtual ~ScavTrap();
 		ScavTrap(const ScavTrap & x);
+		virtual ~ScavTrap();
 
 		ScavTrap&	operator=(const ScavTrap & x);
 		
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
 		void	challengeNewcomer(void);
 };
 

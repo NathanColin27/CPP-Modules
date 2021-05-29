@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 16:49:49 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:49:50 by ncolin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "FragTrap.class.hpp"
 
 FragTrap::FragTrap() 
@@ -36,6 +24,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap& other) {
 	*this = other;
+	std::cout << "Hey everybody! I'm a clone " << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other) {
@@ -67,7 +56,10 @@ void	FragTrap::meleeAttack(std::string const& target)
 void	FragTrap::takeDamage(unsigned int amount)
 {
 	if (amount <= this->_armor_damage_reduction)
+	{
+		std::cout << "Armor blocked the damage" << std::endl;
 		amount = 0;
+	}	
 	else
 		amount = amount - this->_armor_damage_reduction;
 	if (amount > this->_max_hit_points)
@@ -84,9 +76,13 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
+	int test = this->_hit_points;
 	this->_hit_points += amount;
 	if (this->_hit_points > 100)
+	{
 		this->_hit_points = 100;
+		amount = this->_hit_points - test;
+	}
 	std::cout << "FR4G-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
 	std::cout << "Sweet life juice!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
@@ -103,7 +99,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		"There is now gunk on my chassis."
 	};
 	this->_energy_points -= 25;
-	if (this->_energy_points < 0)
+	if (this->_energy_points >= _max_energy_points)
 	{
 		this->_energy_points = 0;
 		std::cout << "FR4G-TP " << this->_name << " is out of energy!" << std::endl;

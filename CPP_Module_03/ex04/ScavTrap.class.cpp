@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 14:31:12 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:48:51 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:41:59 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,6 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 		this->_armor_damage_reduction =other._armor_damage_reduction;
 	}
     return *this;
-}
-
-void	ScavTrap::rangedAttack(std::string const& target)
-{
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
-	std::cout << "You're listening to 'Short-Range Damage Radio'." << std::endl;
-}
-
-void	ScavTrap::meleeAttack(std::string const& target)
-{
-	std::cout << "SC4V-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Meet professor punch!" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(void)

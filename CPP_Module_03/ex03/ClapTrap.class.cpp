@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:49:53 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:49:54 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:39:42 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap& other) {
 	*this = other;
+	std::cout << "Hey everybody! I'm a clone " << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other) {
@@ -63,7 +64,10 @@ void	ClapTrap::meleeAttack(std::string const& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (amount <= this->_armor_damage_reduction)
+	{
+		std::cout << "Armor blocked the damage" << std::endl;
 		amount = 0;
+	}	
 	else
 		amount = amount - this->_armor_damage_reduction;
 	if (amount > this->_max_hit_points)
@@ -72,9 +76,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_hit_points = 0;
 	else
 		this->_hit_points -= amount;
-	std::cout << "SC4V-TP " << this->_name << " takes " << amount << " damages" << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " takes " << amount << " damages" << std::endl;
 	if (amount > 0)
-		std::cout << "I'm leaking!" << std::endl;
+		std::cout << "Why do I even feel pain?!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
 }
 
@@ -83,7 +87,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_hit_points += amount;
 	if (this->_hit_points > 100)
 		this->_hit_points = 100;
-	std::cout << "SC4V-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " gets repaired, he regains " << amount << " hps" << std::endl;
 	std::cout << "Healsies!" << std::endl;
 	std::cout << "Current HP : " << this->_hit_points << std::endl;
 }

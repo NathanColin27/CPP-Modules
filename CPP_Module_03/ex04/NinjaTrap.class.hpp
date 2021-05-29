@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 12:01:03 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 15:35:15 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 23:04:30 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,15 @@
 #include "FragTrap.class.hpp"
 #include "ScavTrap.class.hpp"
 
-class NinjaTrap : public virtual ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
-	private:
-
 	public:
 		NinjaTrap(std::string name);
 		virtual ~NinjaTrap();
 		NinjaTrap(const NinjaTrap& other);
 
 		NinjaTrap&	operator=(const NinjaTrap& other);
-		
-		void	rangedAttack(const std::string& target);
-		void	meleeAttack(const std::string& target);
+
 		void	ninjaShoebox(ClapTrap& clap);
 		void	ninjaShoebox(ScavTrap& scav);
 		void	ninjaShoebox(FragTrap& frag);

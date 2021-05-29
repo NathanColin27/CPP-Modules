@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 12:01:06 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/30 12:45:28 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 23:11:29 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ NinjaTrap::NinjaTrap(std::string name): ClapTrap(name)
 	this->_hit_points = 60;
 	this->_max_hit_points = 60;
 	this->_energy_points = 120;
-	this->_max_energy_points = 20;
+	this->_max_energy_points = 120;
 	this->_level = 1;
 	this->_melee_attack_damage = 60;
 	this->_ranged_attack_damage = 5;
@@ -49,18 +49,6 @@ NinjaTrap&	NinjaTrap::operator=(const NinjaTrap& other)
 		this->_armor_damage_reduction =other._armor_damage_reduction;
 	}
     return *this;
-}
-
-void	NinjaTrap::rangedAttack(std::string const& target)
-{
-	std::cout << "N1NJ4-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
-	std::cout << "How do YOU like target practice? Huh? HUH?!" << std::endl;
-}
-
-void	NinjaTrap::meleeAttack(std::string const& target)
-{
-	std::cout << "N1NJ4-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Punch punch! Fight!" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(NinjaTrap& ninja)

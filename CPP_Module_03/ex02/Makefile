@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
+#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/05/28 16:27:19 by ncolin           ###   ########.fr        #
+#    Updated: 2021/05/29 22:31:06 by nathan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= fragtrap
+NAME			= CL4P
 
 SRCS			=	FragTrap.class.cpp\
 					ScavTrap.class.cpp\

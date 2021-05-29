@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:49:59 by ncolin            #+#    #+#             */
-/*   Updated: 2021/04/29 16:50:00 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/29 22:42:10 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ FragTrap&	FragTrap::operator=(const FragTrap& other) {
 		this->_armor_damage_reduction =other._armor_damage_reduction;
 	}
     return *this;
-}
-
-void	FragTrap::rangedAttack(std::string const& target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_ranged_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Eat bomb, baddie!" << std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const& target)
-{
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_attack_damage << " points of damage" << std::endl; 
-	std::cout << "Pain school is now in session." << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
