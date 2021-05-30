@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:38:43 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 14:06:06 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 14:45:21 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 PowerFist::PowerFist(): AWeapon("PowerFist", 8, 50)
 {
+	std::cout << "PowerFist constructor called" << std::endl;
 }
 
-PowerFist::~PowerFist() {
+PowerFist::~PowerFist()
+{
+	std::cout << "PowerFist destructor called" << std::endl;
 }
 
-PowerFist::PowerFist(const PowerFist & other) {
+PowerFist::PowerFist(const PowerFist & other)
+{
+	std::cout << "PowerFist copy constructor called" << std::endl;
 	*this = other;
 }
 

@@ -1,12 +1,12 @@
 #include "Squad.hpp"
 
-Squad::Squad(): _count(0), _unit(new ISpaceMarine*[0])
+Squad::Squad(): _count(0), _unit(nullptr)
 {
 }
 
 Squad::~Squad()
 {
-	if (_unit == NULL)
+	if (_unit == nullptr)
 		return ;
 	for (int i = 0; i < _count; i++)
 		delete _unit[i];

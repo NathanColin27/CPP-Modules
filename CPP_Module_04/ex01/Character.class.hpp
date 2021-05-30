@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:30:52 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/05 13:00:57 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 14:28:46 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ class Character
 		int			_ap;
 		AWeapon 	*_weapon;
 	public:
-		Character(std::string const & name = "Vault Boy");
+		Character(std::string name);
 		Character(const Character & other);
 		~Character();
 
 		Character&	operator=(const Character & other);
 
 		std::string getName() const;
-		AWeapon* getWeapon(void) const;
-		int getAP(void) const;
-		void recoverAP();
-		void equip(AWeapon *weapon);
-		void attack(Enemy *enemy);
+		AWeapon*	getWeapon(void) const;
+		int			getAP(void) const;
+		void		recoverAP();
+		void		equip(AWeapon *weapon);
+		void		attack(Enemy *enemy);
 };
 
 std::ostream & operator<<(std::ostream &os, Character const &);

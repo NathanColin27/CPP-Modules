@@ -8,14 +8,14 @@
 class Enemy
 {
 	protected:
-		int		_hp;
+		int			_hp;
 		std::string _type;
 	public:
 		Enemy(int hp, std::string const & type);
 		Enemy(Enemy const& other);
 		virtual ~Enemy();
 		
-		Enemy&	operator=(const Enemy & other);
+		Enemy&	operator=(Enemy const& other);
 		
 		int				getHP() const;
 		std::string		getType() const;

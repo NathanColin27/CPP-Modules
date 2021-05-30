@@ -13,7 +13,7 @@ class RadScorpion: public Enemy
 	public:
 		RadScorpion();
 		RadScorpion(int hp, std::string const & type);
-		~RadScorpion();
+		virtual ~RadScorpion();
 		
 		RadScorpion(const RadScorpion & other);
 		

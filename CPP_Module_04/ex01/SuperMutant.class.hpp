@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 11:01:28 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 14:18:53 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 14:22:01 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class SuperMutant: public Enemy
 	public:
 		SuperMutant();
 		SuperMutant(int hp, std::string const & type);
-		~SuperMutant();
+		SuperMutant(SuperMutant const& other);
+		virtual ~SuperMutant();
 		
-		SuperMutant(const SuperMutant & other);
+		SuperMutant&	operator=(SuperMutant const& other);
 		
-		SuperMutant&	operator=(const SuperMutant & other);
 		void takeDamage(int damage);
 };
 

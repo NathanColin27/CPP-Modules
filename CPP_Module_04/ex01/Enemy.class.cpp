@@ -6,11 +6,13 @@ Enemy::~Enemy()
 
 Enemy::Enemy(int hp, std::string const & type): _hp(hp), _type(type) 
 {
+	std::cout << "An enemy of type " << type << " appeared!" << std::endl;
 }
 
 Enemy::Enemy(const Enemy & other)
 {
 	*this = other;
+	std::cout << "The enemy has a clone!" << std::endl;
 }
 
 Enemy&		Enemy::operator=(const Enemy & other) {

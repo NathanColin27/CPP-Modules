@@ -14,12 +14,17 @@
 
 PlasmaRifle::PlasmaRifle(): AWeapon("PlasmaRifle", 5, 21)
 {
+	std::cout << "PlasmaRifle constructor called" << std::endl;
 }
 
-PlasmaRifle::~PlasmaRifle() {
+PlasmaRifle::~PlasmaRifle() 
+{
+	std::cout << "PlasmaRifle destructor called" << std::endl;
 }
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle & other) {
+PlasmaRifle::PlasmaRifle(const PlasmaRifle & other)
+{
+	std::cout << "PlasmaRifle copy constructor called" << std::endl;
 	*this = other;
 }
 

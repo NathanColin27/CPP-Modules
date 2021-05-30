@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 11:01:34 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/06 10:54:46 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 14:39:57 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ SuperMutant::SuperMutant(): Enemy(170,"SuperMutant")
 
 SuperMutant::SuperMutant(const SuperMutant & other): Enemy(other)
 {
-	*this = other;
+	std::cout << "SuperMutant has a Twin!" << std::endl;
 }
 
 SuperMutant&		SuperMutant::operator=(const SuperMutant & other) {
-	if (this != &other) {
+	if (this != &other) 
+	{
 		this->_hp = other._hp;
-	this->_type = other._type;
+		this->_type = other._type;
 	}
     return *this;
 }

@@ -6,25 +6,31 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:39:54 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/05 17:19:23 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 14:50:54 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.class.hpp"
 
-Character::Character(std::string const & name):  _name(name), _ap(40), _weapon(NULL)
+Character::Character(std::string name):  _name(name), _ap(40), _weapon(nullptr)
 {
+	std::cout << "New Character " << name << " created" << std::endl;
 }
 
-Character::~Character() {
+Character::~Character()
+{
+	std::cout << _name << " destroyed" << std::endl;
 }
 
-Character::Character(const Character & other) {
+Character::Character(const Character & other)
+{
 	*this = other;
+	std::cout << _name << " got cloned" << std::endl;
 }
 
 Character&		Character::operator=(const Character & other) {
-	if (this != &other) {
+	if (this != &other)
+	{
 		this->_name = other._name;
 		this->_ap = other._ap;
 		this->_weapon = other._weapon;
@@ -82,7 +88,7 @@ AWeapon* Character::getWeapon(void) const
 std::ostream& operator<<(std::ostream &os, Character const &other)
 {
 	os << other.getName() << " has " << other.getAP() << " AP";
-	if (other.getWeapon() == NULL)
+	if (other.getWeapon() == nullptr)
 		os << " and is unarmed" << std::endl;
 	else
 		os << " and wields a " << other.getWeapon()->getName() << std::endl;
