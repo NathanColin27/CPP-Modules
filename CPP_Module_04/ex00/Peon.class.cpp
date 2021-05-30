@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:57:30 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 15:22:59 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 12:26:41 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,12 @@ Peon::Peon(const Peon &other): Victim(other)
 	*this = other;
 }
 
-Peon&		Peon::operator=(const Peon & x)
+Peon&		Peon::operator=(const Peon & other)
 {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
-	(void)x; // -Werror -Wextra -Wall
-    return *this;
+	if (this != &other)
+		_name = other._name;
+	return *this;
 }
-
 
 std::ostream& operator<<(std::ostream& os, Peon const& Peon)
 {

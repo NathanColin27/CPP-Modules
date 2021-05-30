@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:37:31 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/04 11:39:44 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 12:23:50 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ Sorcerer::Sorcerer(const Sorcerer &other)
 	*this = other;
 }
 
-Sorcerer&		Sorcerer::operator=(const Sorcerer & x)
+Sorcerer&		Sorcerer::operator=(const Sorcerer & other)
 {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
-	(void)x; // -Werror -Wextra -Wall
-    return *this;
+	if (this != &other)
+	{
+		_name = other._name;
+		_title = other._title;
+		std::cout << "I cloned myself!" << std::endl;
+	}
+	return *this;
 }
 
 
@@ -55,7 +55,7 @@ std::string const&  Sorcerer::get_name(void) const
 
 std::ostream& operator<<(std::ostream& os, Sorcerer const& sorcerer)
 {
-	os << "I am " << sorcerer.get_name() << ", " << sorcerer.get_title() << "!" << std::endl;
+	os << "I am " << sorcerer.get_name() << ", " << sorcerer.get_title() << ", and I like ponies!" << std::endl;
     return (os);
 }
 

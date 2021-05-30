@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:37:28 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 15:26:34 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 12:41:37 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@
 class Victim
 {
 	protected:
-		const std::string _title;
-		const std::string _name;
+		std::string _name;
 		Victim();
 	public:
 		Victim(std::string name);
-		Victim(const Victim & x);
-		~Victim();
+		Victim(Victim const& other);
+		virtual ~Victim();
 
-		Victim&	operator=(const Victim & x);
+		Victim&	operator=(Victim const& other);
 
 		std::string	const& get_name(void) const;
 		virtual void getPolymorphed() const;

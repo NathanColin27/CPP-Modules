@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:37:33 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/03 15:12:38 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/30 12:22:40 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ Victim::Victim(const Victim &other)
 	*this = other;
 }
 
-Victim&		Victim::operator=(const Victim & x)
+Victim&		Victim::operator=(const Victim & other)
 {
-	// if (this != &x) {
-	// 	this->a = x.a;
-	// 	this->b = x.b;
-	// 	     ...
-	// }
-	(void)x; // -Werror -Wextra -Wall
-    return *this;
+	if (this != &other)
+	{
+		_name = other._name;
+		std::cout << "Damn, that guy looks just like me!" << std::endl;
+	}
+	return *this;
 }
 
 
