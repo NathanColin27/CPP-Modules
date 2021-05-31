@@ -6,35 +6,49 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:02:18 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 13:25:49 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 17:30:56 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.class.hpp"
 
+Character::Character(): _name(""){}
+
 Character::Character(std::string name): _name(name)
 {
 	for(int i = 0; i < 4; i++)
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
 }
 
 Character::~Character()
 {
 	for(int i = 0; i < 4; i++)
-		delete(this->_inventory[i]);
+		if (_inventory[i])
+			delete(this->_inventory[i]);
 }
 
-Character::Character(const Character & other) {
+Character::Character(const Character & other): _name(other._name)
+{
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = other._inventory[i];
 	*this = other;
 }
 
-Character&		Character::operator=(const Character & other) {
-	if (this != &other) {
-		for(int i = 0; i < 4; i++)
-			this->_inventory[i] =  other._inventory[i]->clone();
-		this->_name = other._name;
+Character&		Character::operator=(const Character & other)
+{
+	int	i;
+
+	if (this != &other)
+	{
+		_name = other._name;
+		i = -1;
+		while (++i < 4 && _inventory[i])
+			delete _inventory[i];
+		i = -1;
+		while (++i < 4 && other._inventory[i])
+			_inventory[i] = other._inventory[i]->clone();
 	}
-    return *this;
+	return (*this);
 }
 
 std::string const & Character::getName() const
@@ -44,37 +58,28 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	for(int i = 0; i < 4; i++)
-		if (_inventory[i] == nullptr)
+	int i = 0;
+	int done = 0;
+
+	while (i < 4 && !done)
+	{
+		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			break;
+			done = 1;
 		}
+		i++;
+	}
 	// std::cout << m->_type << "equiped in slot " << i << std::endl;
 }
 void Character::unequip(int idx)
 {
-	if (idx > 3 || idx < 0)
-	{
-		std::cout << "index must be between 0 and 3"<< std::endl;
-		return ;
-	}
-	if (this->_inventory[idx])
-	{
-		this->_inventory[idx] = nullptr;
-		// std::cout << m->_type << "unequiped slot " << idx << std::endl;
-	}
+	if (_inventory[idx])
+		_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx > 3 || idx < 0)
-	{
-		std::cout << "index must be between 0 and 3"<< std::endl;
-		return ;
-	}
-	else if (this->_inventory[idx])
+	if (idx >= 0 && idx <= 3 && this->_inventory[idx])
 		this->_inventory[idx]->use(target);
-	else
-		std::cout << "This inventory slot is empty"<< std::endl;
 }

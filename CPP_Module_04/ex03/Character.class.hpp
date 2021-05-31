@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 12:44:34 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 13:26:22 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 17:27:33 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Character: public ICharacter
 	private:
 		std::string _name;
 		AMateria* 	_inventory[4];
+		Character();
 	public:
 		Character(std::string name);
 		Character(const Character & other);

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 18:27:17 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/05 19:44:15 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 14:00:02 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ TacticalMarine::~TacticalMarine()
 	std::cout <<  "Aaargh..." << std::endl;
 }
 
-TacticalMarine::TacticalMarine(const TacticalMarine & other) {
+TacticalMarine::TacticalMarine(const TacticalMarine & other)
+{
 	*this = other;
 }
 

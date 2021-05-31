@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 19:42:07 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/05 19:48:08 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:02:02 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ AssaultTerminator::~AssaultTerminator()
 	std::cout << "I’ll be back..." << std::endl;
 }
 
-AssaultTerminator::AssaultTerminator(const AssaultTerminator & other) {
+AssaultTerminator::AssaultTerminator(AssaultTerminator const& other) 
+{
+	std::cout << "* teleports from space *" << std::endl;
 	*this = other;
 }
 
-AssaultTerminator&		AssaultTerminator::operator=(const AssaultTerminator & other) 
+AssaultTerminator&		AssaultTerminator::operator=(AssaultTerminator const& other) 
 {
 	(void)other;
 	return *this;

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:15:41 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 12:18:29 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 14:45:09 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ AMateria::~AMateria()
 {
 }
 
-AMateria::AMateria(const AMateria & other) {
+AMateria::AMateria(const AMateria & other): _type(other._type)
+{
 	*this = other;
 }
 
 AMateria&		AMateria::operator=(const AMateria & other) {
-	if (this != &other) {
+	if (this != &other)
+	{
 		this->_xp = other._xp;
-		this->_type = other._type;
 	}
     return (*this);
 }

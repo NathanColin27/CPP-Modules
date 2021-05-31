@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:27:42 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 16:47:56 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 16:10:05 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class MateriaSource: public IMateriaSource
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource & other);
-		~MateriaSource();
+		virtual ~MateriaSource();
 
 		MateriaSource&	operator=(const MateriaSource & other);
 

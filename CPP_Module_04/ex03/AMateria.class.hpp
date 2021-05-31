@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:15:48 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 13:26:48 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 14:47:22 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class ICharacter;
 class AMateria
 {
 	protected:
-		std::string	_type;
-		unsigned int _xp;
+		std::string		_type;
+		unsigned int	_xp;
+		AMateria();
 	public:
 		AMateria(std::string const & type);
 		AMateria(AMateria const & other);

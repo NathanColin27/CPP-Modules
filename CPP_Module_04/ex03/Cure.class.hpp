@@ -12,13 +12,13 @@ class Cure: public AMateria
 		std::string _type;
 	public:
 		Cure();
-		~Cure();
 		Cure(const Cure & other);
+		virtual ~Cure();
 		
 		Cure&	operator=(const Cure & other);
 
-		AMateria	*clone(void) const;
-		void 		use(ICharacter& target);
+		virtual Cure*	clone() const;
+		virtual void 			use(ICharacter& target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 17:49:28 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/05 19:37:55 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:15:13 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class TacticalMarine: public ISpaceMarine
 
 	public:
 		TacticalMarine();
-		~TacticalMarine();
 		TacticalMarine(const TacticalMarine & other);
+		virtual ~TacticalMarine();
 
 		TacticalMarine&	operator=(const TacticalMarine & other);
 

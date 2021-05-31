@@ -4,7 +4,8 @@ Cure::Cure(): AMateria("cure")
 {
 }
 
-Cure::~Cure() {
+Cure::~Cure() 
+{
 }
 
 Cure::Cure(const Cure & other): AMateria("cure")
@@ -13,10 +14,9 @@ Cure::Cure(const Cure & other): AMateria("cure")
 }
 
 Cure&		Cure::operator=(const Cure & other) {
-	if (this != &other) {
-		this->_type = other._type;
-		this->_xp = other._xp;
-
+	if (this != &other)
+	{
+		this->_xp = other.getXP();
 	}
     return *this;
 }
@@ -24,11 +24,10 @@ Cure&		Cure::operator=(const Cure & other) {
 void 		Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " + target.getName() + "’s wounds *" << std::endl;
-	this->_xp += 10;
+	AMateria::use(target);
 }
 
-AMateria*	Cure::clone() const
+Cure*	Cure::clone() const
 {
-	Cure *clone = new Cure(*this);
-	return (clone);
+	return (new Cure(*this));
 }

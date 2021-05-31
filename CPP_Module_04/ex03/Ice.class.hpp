@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:40:51 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/07 13:09:37 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/05/31 17:33:12 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class Ice: public AMateria
 		std::string _type;
 	public:
 		Ice();
-		~Ice();
 		Ice(const Ice & other);
+		virtual ~Ice();
 		
 		Ice&	operator=(const Ice & other);
 
-		AMateria	*clone(void) const;
-		void 		use(ICharacter& target);
+		AMateria*		clone() const;
+		virtual void 	use(ICharacter& target);
 };
 
 #endif
