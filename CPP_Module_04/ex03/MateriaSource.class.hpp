@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:27:42 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/31 16:10:05 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/06/01 15:24:26 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class MateriaSource: public IMateriaSource
 {
 	private:
-		AMateria *learned[4];
+		AMateria *_learned[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource & other);

@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:06:57 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/31 17:35:41 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/06/01 16:35:04 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,224 +40,127 @@ int main(void)
 		delete me;
 		delete src;
 	}
+	
+	std::cout << std::endl << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+	std::cout << "|-----------OBJECT INSTANCIATION-------------|" << std::endl;
+	std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl << std::endl;
+	
+	std::cout << "On stack" << std::endl;
+	{
+		Character on_stack("Char");
+		Character on_stack_cpy(on_stack);
+	}
+	std::cout << std::endl << "On heap" << std::endl;
+	{
+		Character *on_heap = new Character("Char");
+		Character *on_heap_cpy = new Character(*on_heap);
 
-	    Character ch("YO");
+		delete on_heap;
+		delete on_heap_cpy;
+	}
+	
+	std::cout << std::endl << "-----------------------"<< std::endl << std::endl;
 
-    std::cout << std::endl;
+	std::cout << "On stack" << std::endl;
+	{
+		Ice on_stack;
+		Ice on_stack_cpy(on_stack);
+	}
+	std::cout << std::endl << "On heap" << std::endl;
+	{
+		Ice *on_heap = new Ice();
+		Ice *on_heap_cpy = new Ice(*on_heap);
 
-    {
-        std::cout << "================== ICE          ==================" << std::endl;
-        Ice i;
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        Ice i2(i);
-        std::cout << "Type: " << i2.getType() << ", XP: " << i2.getXP() << std::endl;
-        Ice i3;
-        i3 = i2;
-        std::cout << "Type: " << i2.getType() << ", XP: " << i2.getXP() << std::endl;
-        AMateria *i4 = new Ice(i);
-        std::cout << "Type: " << i4->getType() << ", XP: " << i4->getXP() << std::endl;
+		delete on_heap;
+		delete on_heap_cpy;
+	}
+	
+	std::cout << std::endl << "-----------------------"<< std::endl << std::endl;
 
-        std::cout << "################## NO ASSIGN TYPE" << std::endl;
-        AMateria *c = new Cure();
-        *c = i3;
-        std::cout << "Type: " << c->getType() << ", XP: " << c->getXP() << std::endl;
+	std::cout << "On stack" << std::endl;
+	{
+		Cure on_stack;
+		Cure on_stack_cpy(on_stack);
+	}
+	std::cout << std::endl << "On heap" << std::endl;
+	{
+		Cure *on_heap = new Cure();
+		Cure *on_heap_cpy = new Cure(*on_heap);
 
-        std::cout << "################## CLONE" << std::endl;
-        AMateria *cl = i3.clone();
-        std::cout << "Type: " << cl->getType() << ", XP: " << cl->getXP() << std::endl;
+		delete on_heap;
+		delete on_heap_cpy;
+	}
+	
+	std::cout << std::endl << "-----------------------"<< std::endl << std::endl;
 
-        std::cout << "################## USE" << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
-        i.use(ch);
-        std::cout << "Type: " << i.getType() << ", XP: " << i.getXP() << std::endl;
+	std::cout << "On stack" << std::endl;
+	{
+		MateriaSource on_stack;
+		MateriaSource on_stack_cpy(on_stack);
+	}
+	std::cout << std::endl << "On heap" << std::endl;
+	{
+		MateriaSource *on_heap = new MateriaSource();
+		MateriaSource *on_heap_cpy = new MateriaSource(*on_heap);
 
-        delete cl;
-        delete c;
-        delete i4;
-    }
+		delete on_heap;		
+		delete on_heap_cpy;
+	}
+	
+	std::cout << std::endl << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+	std::cout << "|-----------------MORE TESTS-----------------|" << std::endl;
+	std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl << std::endl;
+	
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* bob = new Character("bob");
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	
+	std::cout << std::endl << "-----------Creating unexisting materia------------"<< std::endl << std::endl;
+	
+	tmp = src->createMateria("not existing");
+	me->equip(tmp);
+	if (tmp == NULL)
+		std::cout << "the material does not exist" << std::endl;
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	
+	std::cout << std::endl << "-----------Creating and equiping------------"<< std::endl << std::endl;
+	
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
+	bob->use(0, *me);
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	bob->use(1, *me);
+	
+	std::cout << std::endl << "-----------Trying unexisting indexes------------"<< std::endl << std::endl;
+	
+	bob->use(-1, *me);
+	bob->use(4, *me);
+	bob->use(19, *me);
 
-    std::cout << std::endl;
+	std::cout << std::endl << "-----------Trying empty indexes------------"<< std::endl << std::endl;
 
-    {
-        std::cout << "================== ICE          ==================" << std::endl;
-        Cure c;
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        Cure c2(c);
-        std::cout << "Type: " << c2.getType() << ", XP: " << c2.getXP() << std::endl;
-        Cure c3;
-        c3 = c2;
-        std::cout << "Type: " << c2.getType() << ", XP: " << c2.getXP() << std::endl;
-        AMateria *c4 = new Cure(c);
-        std::cout << "Type: " << c4->getType() << ", XP: " << c4->getXP() << std::endl;
+	bob->use(2, *me);
+	bob->use(3, *me);
+	
+	std::cout << std::endl << "-----------Unequip------------"<< std::endl << std::endl;
 
-        std::cout << "################## NO ASSIGN TYPE" << std::endl;
-        AMateria *i = new Ice();
-        *i = c3;
-        std::cout << "Type: " << i->getType() << ", XP: " << i->getXP() << std::endl;
+	bob->use(1, *me);
+	bob->unequip(1);
+	bob->use(1, *me);
+	
+	std::cout << std::endl << "-----------Deleting------------"<< std::endl << std::endl;
+		
+	delete bob;
+	delete me;
+	delete src;
+	delete tmp;
 
-        std::cout << "################## CLONE" << std::endl;
-        AMateria *cl = c3.clone();
-        std::cout << "Type: " << cl->getType() << ", XP: " << cl->getXP() << std::endl;
-
-        std::cout << "################## USE" << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-        c.use(ch);
-        std::cout << "Type: " << c.getType() << ", XP: " << c.getXP() << std::endl;
-
-        delete cl;
-        delete i;
-        delete c4;
-    }
-
-    std::cout << std::endl;
-
-    {
-        std::cout << "================== CHARACTER    ==================" << std::endl;
-        Character c("Jean-Didier");
-        std::cout << "Name: " << c.getName() << std::endl;
-        Character c2(c);
-        std::cout << "Name: " << c2.getName() << std::endl;
-        Character c3("SHOULD NOT BE PRINTED");
-        c3 = c;
-        std::cout << "Name: " << c3.getName() << std::endl;
-
-        std::cout << "################## EQUIP/USE" << std::endl;
-        AMateria *tmp0 = new Ice();
-        AMateria *tmp1 = new Cure();
-        AMateria *tmp2 = new Cure();
-        AMateria *tmp3 = new Ice();
-        c.equip(tmp0);
-        c.equip(tmp1);
-        c.use(0, ch);
-        c.use(1, ch);
-        c.equip(tmp2);
-        c.equip(tmp3);
-        c.use(2, ch);
-        c.use(3, ch);
-        c.use(-1, ch);
-        c.use(4, ch);
-        c.unequip(0);
-        c.use(0, ch);
-        c.use(3, ch);
-        c.unequip(0);
-        c.use(0, ch);
-        c.use(2, ch);
-        c.unequip(0);
-        c.use(0, ch);
-        c.use(1, ch);
-        c.unequip(0);
-        c.use(0, ch);
-        c.unequip(0);
-        c.unequip(0);
-        c.unequip(0);
-        c.unequip(0);
-        c.unequip(0);
-        c.equip(NULL);
-        c.use(0, ch);
-        c.equip(NULL);
-        c.use(1, ch);
-        delete tmp0;
-        delete tmp1;
-        delete tmp2;
-        delete tmp3;
-
-        std::cout << "################## DEEP COPY" << std::endl;
-        c.equip(new Ice());
-        c.use(0, ch);
-        Character copy(c);
-		std::cout << "mdr" << std::endl;
-        std::cout << "Copied name: " << copy.getName() << std::endl;
-        copy.use(0, ch);
-        c.equip(new Cure());
-        c.use(1, ch);
-        copy.use(1, ch);
-        Character assigned("SHOULD NOT BE PRINTED");
-        assigned = c;
-        std::cout << "Assign name: " << copy.getName() << std::endl;
-        assigned.use(1, ch);
-        c.equip(new Ice());
-        c.use(2, ch);
-        assigned.use(2, ch);
-
-        std::cout << "################## INTERFACE" << std::endl;
-        ICharacter *ic = new Character(c);
-        std::cout << "Interface name: " << ic->getName() << std::endl;
-        ic->use(0, ch);
-        ic->use(1, ch);
-        ic->use(2, ch);
-        ic->equip(new Ice());
-        ic->use(3, ch);
-        ic->use(1, ch);
-        delete ic;
-    }
-
-    std::cout << std::endl;
-
-    {
-        std::cout << "================== MATERIA SRC  ==================" << std::endl;
-        MateriaSource ms;
-        ms.learnMateria(new Ice());
-        MateriaSource ms2(ms);
-        MateriaSource ms3;
-        ms3.learnMateria(new Cure());
-        ms3 = ms;
-        std::cout << ms3.createMateria("cure") << std::endl;
-        AMateria *m;
-        m = ms.createMateria("ice");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-        m = ms2.createMateria("ice");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-        m = ms3.createMateria("ice");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-
-        m = ms.createMateria("");
-        std::cout << m << std::endl;
-        m = ms.createMateria("foo");
-        std::cout << m << std::endl;
-        ms.learnMateria(NULL);
-
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        ms.learnMateria(new Ice());
-        m = ms.createMateria("ice");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-
-        std::cout << "################## INTERFACE" << std::endl;
-        IMateriaSource *ims = new MateriaSource(ms2);
-        m = ims->createMateria("ice");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-        ims->learnMateria(new Cure());
-        m = ims->createMateria("cure");
-        std::cout << "Type: " << m->getType() << ", XP: " << m->getXP() << std::endl;
-        delete m;
-        delete ims;
-    }
-
+	return 0;
 }
