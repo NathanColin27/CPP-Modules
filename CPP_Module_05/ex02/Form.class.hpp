@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 18:15:18 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/17 11:12:30 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/03 23:05:35 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Form
 
 		// Member functions
 		void beSigned(Bureaucrat const &bureaucrat);
-		virtual void execute(Bureaucrat const & executor) const;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		// Exceptions
 		class AlreadySignedException : public std::exception

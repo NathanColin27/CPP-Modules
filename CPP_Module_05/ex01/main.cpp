@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:33:44 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/16 18:51:48 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/06/03 23:00:21 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(void)
 	Bureaucrat	Buro_1("Buro_1", 49);
 	std::cout << Buro_1;
 	
+
+	std::cout << "------------------------------------------" << std::endl;
+	
 	try
 	{
 		Form		Form_1("Form_1", 50, 0);
@@ -32,6 +35,9 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "------------------------------------------" << std::endl;
+	
+	
 	try
 	{
 		Form		Form_1("Form_1", 0, 0);
@@ -41,6 +47,7 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "------------------------------------------" << std::endl;
 	
 	try
 	{
@@ -51,9 +58,11 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "------------------------------------------" << std::endl;
 	
 	Form		Form_1("Form_1", 50, 50);
 	std::cout << Form_1;	
+	std::cout << "------------------------------------------" << std::endl;
 	
 	try
 	{
@@ -64,7 +73,7 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
+	
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "-----------------TEST_2-------------------" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
@@ -140,7 +149,7 @@ int main(void)
 	std::cout << "-----------------TEST_6-------------------" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	
-	Form		Form_5("Form_5", 1, 1);
+	Form		Form_5(Form_4);
 	std::cout << Form_5;
 	try
 	{
