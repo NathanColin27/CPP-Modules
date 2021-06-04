@@ -46,30 +46,46 @@ std::string		ShrubberyCreationForm::getTarget(void) const
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	std::string filename = this->getTarget() + "_shrubbery";
-	std::string my_tree = R"(
-	   _-_
-    /~~   ~~\ 
- /~~         ~~\
-{               }
- \  _-     -_  /
-   ~  \\ //  ~
-_- -   | | _- _
-  _ -  | |   -_
-      // \\ 
-)";
+	std::string tmp = this->getTarget() + "_shrubbery";
+	const char *filename = tmp.c_str();
+	std::string my_trees[3] = 
+	{
+		"       _-_\n"\
+		"    /~~   ~~\\\n"\
+		" /~~         ~~\\\n"\
+		"{       A       }\n"\
+		" \\  _-     -_  /\n"\
+		"   ~  \\ //  ~\n"\
+		"_- -   | | _- _\n"\
+		"  _ -  | |   -_\n"\
+		"      // \\",
+			"       _-_\n"\
+		"    /~~   ~~\\\n"\
+		" /~~         ~~\\\n"\
+		"{       B       }\n"\
+		" \\  _-     -_  /\n"\
+		"   ~  \\ //  ~\n"\
+		"_- -   | | _- _\n"\
+		"  _ -  | |   -_\n"\
+		"      // \\",
+			"       _-_\n"\
+		"    /~~   ~~\\\n"\
+		" /~~         ~~\\\n"\
+		"{       C       }\n"\
+		" \\  _-     -_  /\n"\
+		"   ~  \\ //  ~\n"\
+		"_- -   | | _- _\n"\
+		"  _ -  | |   -_\n"\
+		"      // \\"
+	};
 
-	try
-	{
-		Form::execute(executor);
-		std::ofstream tree(filename);
-		tree << my_tree;
-		tree.close();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	
+	Form::execute(executor);
+	std::ofstream tree(filename);
+
+	tree << my_trees[rand()%3];
+	tree << std::endl;
+	tree.close();
 }
 
 // Exceptions

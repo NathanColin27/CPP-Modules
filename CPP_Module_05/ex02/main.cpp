@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:33:44 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/17 13:32:12 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/04 17:40:14 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,181 +16,90 @@
 #include "ShrubberyCreationForm.class.hpp"
 #include "Form.class.hpp"
 
-// int main(void)
-// {
-	
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_1-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
-	// {
-	// 	Bureaucrat	Buro_1("Buro_1", 1);
-	// 	std::cout << Buro_1;
-		
-	// 	PresidentialPardonForm presForm("test");
-	// 	std::cout << presForm << std::endl;
-		
-	// 	Buro_1.signForm(presForm);
-	// 	std::cout << presForm << std::endl;
+int main(void)
+{
 
-	// 	presForm.execute(Buro_1);
-	// }
-	// {
-	// 	Bureaucrat	Buro_1("Buro_1", 150);
-	// 	std::cout << Buro_1;
-		
-	// 	PresidentialPardonForm presForm("test");
-	// 	std::cout << presForm << std::endl;
-		
-	// 	Buro_1.signForm(presForm);
-	// 	std::cout << presForm << std::endl;
+	Bureaucrat supervisor("Supervisor", 1);
+	std::cout << supervisor << std::endl;
+	Bureaucrat patrice("Patrice", 25); // 1
+	std::cout << "1: " << patrice << std::endl;
+	patrice.grade_inc(); // 2
+	std::cout << "2: " << patrice << std::endl;
+	patrice.grade_dec(); // 3
+	std::cout << "3: "<< patrice << std::endl;
 
-	// 	presForm.execute(Buro_1);
-	// }
-	// {
-	// 	Bureaucrat	Buro_1("Buro_1", 15);
-	// 	std::cout << Buro_1;
-		
-	// 	PresidentialPardonForm presForm("test");
-	// 	std::cout << presForm << std::endl;
-		
-	// 	Buro_1.signForm(presForm);
-	// 	std::cout << presForm << std::endl;
+	Form *shrub = new ShrubberyCreationForm("home");
+	std::cout << *shrub << std::endl;
+	shrub->beSigned(supervisor);
+	shrub->execute(patrice);
 
-	// 	presForm.execute(Buro_1);
-	// }
+	Form *pres = new PresidentialPardonForm("patrice");
+	std::cout << *pres << std::endl;
+	supervisor.signForm(*pres);
+	pres->execute(supervisor);
 
+	Form *robot = new RobotomyRequestForm("Bender");
+	std::cout << *robot << std::endl;
+	robot->beSigned(supervisor);
+	robot->execute(patrice);
+	patrice.executeForm(*robot);
+	patrice.executeForm(*robot);
 
-	// shrubForm.execute(Buro_1);
-	
-	// try
-	// {
-	// 	Form		Form_1("Form_1", 50, 0);
-	// 	std::cout << Form_1;	
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
+	std::cout << "try 1" << std::endl;
 
-	// try
-	// {
-	// 	Form		Form_1("Form_1", 0, 0);
-	// 	std::cout << Form_1;	
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	
-	// try
-	// {
-	// 	Form		Form_1("Form_1", 50, 200);
-	// 	std::cout << Form_1;	
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	
-	// Form		Form_1("Form_1", 50, 50);
-	// std::cout << Form_1;	
-	
-	// try
-	// {
-	// 	Buro_1.signForm(Form_1);
-	// 	std::cout << Form_1;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
+	try
+	{
+		patrice.executeForm(*pres);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_2-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
-	
-	// try
-	// {	
-	// 	Buro_1.signForm(Form_1);
-	// 	std::cout << Form_1;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
+	std::cout << "Try 2" << std::endl;
 
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_3-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
+	try
+	{
+		RobotomyRequestForm robot = RobotomyRequestForm("Bender");
+		std::cout << robot << std::endl;
+		robot.execute(supervisor);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	// Form		Form_2("Form_2", 50, 50);
-	// std::cout << Form_2;
-	// try
-	// {
-	// 	Buro_1.grade_dec();
-	// 	std::cout << Buro_1;
-	// 	Buro_1.grade_dec();
-	// 	std::cout << Buro_1;
-	// 	Buro_1.signForm(Form_2);
-	// 	std::cout << Form_2;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_4-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
-	
-	// Form		Form_3("Form_3", 50, 50);
-	// std::cout << Form_3;
-	
-	// try
-	// {
-	// 	Buro_1.grade_inc();
-	// 	std::cout << Buro_1;
-	// 	Buro_1.signForm(Form_3);
-	// 	std::cout << Form_3;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_5-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
-	
-	// Form		Form_4("Form_4", 100, 100);
-	// std::cout << Form_4;
-	// try
-	// {
-	// 	std::cout << Buro_1;
-	// 	Form_4.beSigned(Buro_1);
-	// 	std::cout << Form_4;
+	std::cout << "Try 3" << std::endl;
 
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	
-	// std::cout << "------------------------------------------" << std::endl;
-	// std::cout << "-----------------TEST_6-------------------" << std::endl;
-	// std::cout << "------------------------------------------" << std::endl;
-	
-	// Form		Form_5("Form_5", 1, 1);
-	// std::cout << Form_5;
-	// try
-	// {
-	// 	std::cout << Buro_1;
-	// 	Form_5.beSigned(Buro_1);
-	// 	std::cout << Form_5;
+	try
+	{
+		PresidentialPardonForm pres = PresidentialPardonForm("patrice");
+		std::cout << pres << std::endl;
+		supervisor.signForm(pres);
+		pres.execute(patrice);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-// }
+	std::cout << "Try 4" << std::endl;
+
+	try
+	{
+		PresidentialPardonForm pres = PresidentialPardonForm("patrice");
+		std::cout << pres << std::endl;
+		supervisor.signForm(pres);
+		patrice.executeForm(pres);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	delete shrub;
+	delete pres;
+	delete robot;
+
+	return (0);
+}

@@ -57,7 +57,7 @@ Form* Intern::makeForm(std::string const name, std::string const target)
 		if (list[i].name == name)
 			return (list[i].ft_ptr(target));
 	std::cout << "Intern couldn't find the form template, back to making coffee" << std::endl;
-	return (nullptr);
+	return (NULL);
 }
 
 // Exceptions
