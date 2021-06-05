@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:37:00 by ncolin            #+#    #+#             */
-/*   Updated: 2021/06/05 12:58:12 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/06/05 13:12:16 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,15 @@ void				Bureaucrat::signForm(Form &form)
 
 void Bureaucrat::executeForm(Form const& form) const
 {
-    try
-    {
-        std::cout << _name << " executes " << form.getName() << std::endl;
-        form.execute(*this);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << _name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
-    }
+try
+	{
+		std::cout << _name << " executes " << form.getName() << std::endl;
+		form.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()
