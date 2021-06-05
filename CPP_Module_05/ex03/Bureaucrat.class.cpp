@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.class.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:37:00 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/17 13:31:22 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/05 12:58:12 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void				Bureaucrat::signForm(Form &form)
 {	
 	try
 	{
-		form.beSigned(*this);
 		std::cout << this->getName() <<" signs " << form.getName() << std::endl;
+		form.beSigned(*this);
 	}
 	catch(const std::exception& e)
 	{
@@ -83,8 +83,8 @@ void Bureaucrat::executeForm(Form const& form) const
 {
     try
     {
-        form.execute(*this);
         std::cout << _name << " executes " << form.getName() << std::endl;
+        form.execute(*this);
     }
     catch (std::exception &e)
     {

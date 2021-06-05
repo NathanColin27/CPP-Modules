@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:37:00 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/17 12:28:16 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/05 12:02:20 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Form::Form(std::string name, int sign_grade, int exec_grade): _name(name), _sign
 		throw Form::GradeTooHighException();
 	else if (sign_grade > 150 || exec_grade > 150)
 		throw Form::GradeTooLowException();
+	this->_signed = false;
 }
 
 Form::~Form()
@@ -62,7 +63,6 @@ void 				Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	try
 	{
-		/* code */
 		if (this->getSigned())
 			throw (Form::AlreadySignedException());
 		else if (bureaucrat.getGrade() > this->_sign_grade)
@@ -82,10 +82,10 @@ void 				Form::beSigned(Bureaucrat const &bureaucrat)
 
 void	Form::execute(Bureaucrat const &executor) const
 {
+	if (!this->getSigned())
+		throw (Form::NotSignedException());
 	if (executor.getGrade() > this->_exec_grade)
 		throw (Form::GradeTooLowException());
-	else if (!this->getSigned())
-		throw (Form::NotSignedException());
 }
 
 std::ostream &operator<<(std::ostream &os, Form const &other)
@@ -114,5 +114,5 @@ const char * Form::AlreadySignedException::what() const throw()
 
 const char * Form::NotSignedException::what() const throw()
 {
-	return ("This form isn't signed yet");
+	return ("This form isn't signed");
 }

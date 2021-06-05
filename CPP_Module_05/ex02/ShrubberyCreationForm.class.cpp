@@ -79,13 +79,18 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		"      // \\"
 	};
 
-	
-	Form::execute(executor);
-	std::ofstream tree(filename);
-
-	tree << my_trees[rand()%3];
-	tree << std::endl;
-	tree.close();
+	try
+	{
+		Form::execute(executor);
+		std::ofstream tree(filename);
+		tree << my_trees[rand() % 3];
+		tree << std::endl;
+		tree.close();
+	}
+	catch (const std::exception&e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 // Exceptions

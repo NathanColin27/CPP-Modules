@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:33:44 by ncolin            #+#    #+#             */
-/*   Updated: 2021/06/03 23:00:21 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/05 10:52:40 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.class.hpp"
 #include "Form.class.hpp"
+
 int main(void)
 {
 	std::cout << "------------------------------------------" << std::endl;
