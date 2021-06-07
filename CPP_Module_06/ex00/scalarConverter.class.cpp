@@ -34,7 +34,7 @@ bool	scalarConverter::isChar(std::string arg)
 {
 	// std::cout << " length : " << arg.length() << " front : "  << arg.front()  << " back : "  << arg.back()<< std::endl;
 
-	if (arg.length() == 3 && arg.front() == '\'' && arg.back() == '\'')
+	if (arg.length() == 3 && arg[0] == '\'' && arg[2] == '\'')
 		return (true);
 	return (false);
 }
@@ -43,13 +43,13 @@ bool	scalarConverter::isFloat(std::string arg)
 {
 	if (arg == "+inff" || arg == "-inff" || arg == "nanf")
 		return (true);
-	if (arg.back() != 'f')
+	if (arg[arg.length() - 1] != 'f')
 		return(false);
 	else
 		arg.resize(arg.size () - 1);
 	if (arg[0] == '-' || arg[0] == '+')
 		arg = arg.substr(1);
-	if (arg.front() == '.' || arg.back() == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
+	if (arg[0] == '.' || arg[arg.length() - 1] == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
 		return (false);
 	for (size_t i = 0; i < arg.length(); i++)
 	{
@@ -60,7 +60,10 @@ bool	scalarConverter::isFloat(std::string arg)
 }
 
 bool	scalarConverter::isInt(std::string arg)
-{
+{	
+	long check = std::atol(arg.c_str());
+	if (check < INT32_MIN || check > INT32_MAX)
+		return (false);
 	//Remove sign
 	if (arg[0] == '-' || arg[0] == '+')
 		arg = arg.substr(1);
@@ -70,7 +73,7 @@ bool	scalarConverter::isInt(std::string arg)
 		if (!isdigit(arg[i]))
 			return (false);
 	}
-	if (stol(arg) < INT32_MIN || stol(arg) > INT32_MAX)
+	if (check < INT32_MIN || check > INT32_MAX)
 		return (false);
 	return (true);
 }
@@ -83,7 +86,7 @@ bool	scalarConverter::isDouble(std::string arg)
 	//Remove sign
 	if (arg[0] == '-' || arg[0] == '+')
 		arg = arg.substr(1);
-	if (arg.front() == '.' || arg.back() == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
+	if (arg[0] == '.' || arg[arg.length() - 1] == '.' || std::count(arg.begin(), arg.end(), '.') != 1 )
 		return (false);
 	for (size_t i = 0; i < arg.length(); i++)
 	{
@@ -94,8 +97,14 @@ bool	scalarConverter::isDouble(std::string arg)
 }
 
 double	scalarConverter::convToFloat(std::string value)
-{
+{	
 	double ret;
+	if (value == "+inff")
+		return (INFINITY);
+	else if (value == "-inff")
+		return (-INFINITY);
+	else if (value == "nanf")
+		return (NAN);
 	std::stringstream res;
 	value.resize(value.size() - 1);
 	res << value;
@@ -106,6 +115,12 @@ double	scalarConverter::convToFloat(std::string value)
 double	scalarConverter::convToDouble(std::string value)
 {
 	double ret;
+	if (value == "+inf")
+		return (INFINITY);
+	else if (value == "-inf")
+		return (-INFINITY);
+	else if (value == "nan")
+		return (NAN);
 	std::stringstream res;
 	res << value;
 	res >> ret;

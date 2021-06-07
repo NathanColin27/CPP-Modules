@@ -1,12 +1,20 @@
+#ifndef DATA_HPP
+#define DATA_HPP
+#define INT32_MAX 2147483647
+
 #include <string>
 #include <time.h>
 #include <iostream>
+#include <stdlib.h>
+
 
 struct Data {
-	std::string str1;
+	char str1[8];
 	int n;
-	std::string str2;
+	char str2[8];
 };
 
 void *serialize(void);
 Data *deserialize(void *raw);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:54:51 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/23 11:35:24 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/07 23:12:37 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,24 @@ int main(int ac, char **av)
 	{
 		char c = static_cast<char>(tmp);
 		if (isprint(c))
-			std::cout << "char: '" << c <<  "'" << std::endl;
+			std::cout << "char:	'" << c <<  "'" << std::endl;
 		else
-			std::cout << "char: Non displayable" << std::endl;		
+			std::cout << "char:	Non displayable" << std::endl;		
 	}
 	else
-		std::cout << "char: impossible" << std::endl;
-	if(tmp >= INT32_MIN && tmp <= INT32_MAX && !isnan(tmp))
-		std::cout << "int: " << static_cast<int>(tmp) << std::endl;
+		std::cout << "char:	impossible" << std::endl;	
+	if(tmp >= INT32_MIN && tmp <= INT32_MAX && 	!isnan(tmp))
+		std::cout << "int:	" << static_cast<int>(tmp) << std::endl;
 	else
-		std::cout << "int: impossible" << std::endl;
+		std::cout << "int:	impossible" << std::endl;
 	if (tmp == static_cast<int>(tmp))
 	{
-		std::cout << "float: " 	<< std::fixed<<std::setprecision(1) << static_cast<float>(tmp) << "f" << std::endl;
-		std::cout << "double: " << std::fixed<<std::setprecision(1) << tmp << std::endl;
+		std::cout << "float:	" << std::fixed<<std::setprecision(1) << static_cast<float>(tmp) << "f" << std::endl;
+		std::cout << "double:	" << std::fixed<<std::setprecision(1) << tmp << std::endl;
 	}
 	else
 	{
-		std::cout << "float: " << static_cast<float>(tmp) << "f" << std::endl;
-		std::cout << "double: " << tmp << std::endl;
+		std::cout << "float:	" << static_cast<float>(tmp) << "f" << std::endl;
+		std::cout << "double:	" << tmp << std::endl;
 	}
 }
