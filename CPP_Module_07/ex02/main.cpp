@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 14:56:13 by nathan            #+#    #+#             */
-/*   Updated: 2021/05/24 00:01:59 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/08 10:53:39 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 	std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl << std::endl;
 	
 	Array<int> test1(3);
-	std::cout << test1.size() << std::endl;
+	std::cout << "Size : "<< test1.size() << std::endl;
 	std::cout << "[test1]" << std::endl << test1 << std::endl;
 
 	try
@@ -55,7 +55,9 @@ int main(void)
 	std::cout << 				"|------------------TEST3---------------------|" << std::endl;
 	std::cout << 				"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl << std::endl;
 	
-	Array<Array<int>> test3(3);
+	Array<float> test3(3);
+	for (size_t i = 0; i < test1.size(); i++)
+			test3[i] = i;
 	std::cout << "[test3]" << std::endl << test3 << std::endl;
 	
 }

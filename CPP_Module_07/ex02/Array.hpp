@@ -22,6 +22,8 @@ class Array
 		{
 			_arr = new T[n];
 			_size = n;
+			for (size_t i = 0; i < this->_size; i++)
+				this->_arr[i] = 0;
 		}
 		Array(const Array &other)
 		{	
@@ -29,7 +31,6 @@ class Array
 			this->_size = other._size;
 			for (size_t i = 0; i < this->_size; i++)
 				this->_arr[i] = other._arr[i];
-			// this = other;
 		}
 		virtual ~Array()
 		{
