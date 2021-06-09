@@ -1,14 +1,14 @@
-#include "mutantstack.class.hpp"
+#include "MutantStack.class.hpp"
 
 // constructors & destructors
 
 template<typename T>
-mutantstack<T>::mutantstack(): std::stack<T>()
+MutantStack<T>::MutantStack(): std::stack<T>()
 {
 }
 
 template<typename T>
-mutantstack<T>::mutantstack(const mutantstack &other)
+MutantStack<T>::MutantStack(const MutantStack &other)
 {
 	*this = other;
 }

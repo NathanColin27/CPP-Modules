@@ -1,5 +1,5 @@
-#ifndef MUTANTSTACK_HPP
-#define MUTANTSTACK_HPP
+#ifndef MutantStack_HPP
+#define MutantStack_HPP
 
 #include <string>
 #include <iostream>
@@ -9,22 +9,32 @@
 #include <algorithm>
 
 template<typename T>
-class mutantstack: public std::stack<T>
+class MutantStack: public std::stack<T>
 {
 	private:
 	public:
 		// constructors & destructors
 
-		mutantstack<T>();
-		mutantstack<T>(const mutantstack & x);
-		virtual ~mutantstack<T>();
+		MutantStack<T>();
+		MutantStack<T>(const MutantStack & x);
+		virtual ~MutantStack<T>();
 
 
 		// Operator overloads
 
-		mutantstack&	operator=(const mutantstack & x);
+		MutantStack&	operator=(const MutantStack & x);
 		typedef typename std::deque<T>::iterator iterator;
 		// Getters and Setters
+
+		iterator begin() const
+		{
+			return this->c.begin();
+		}
+
+		iterator end() const
+		{
+			return this->c.end();
+		}
 
 		// Member functions
 

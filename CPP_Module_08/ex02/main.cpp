@@ -3,18 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:17:05 by nathan            #+#    #+#             */
-/*   Updated: 2021/05/25 22:29:23 by nathan           ###   ########.fr       */
+/*   Updated: 2021/06/09 17:03:39 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mutantstack.class.hpp"
+#include "MutantStack.class.hpp"
 
-int main(void)
-{
-	mutantstack<int> ms;
-	ms.push(2);
-	std::cout << ms.top();
-}
+	int main()
+	{
+		MutantStack<int> mstack;
+		mstack.push(5);
+		mstack.push(17);
+		std::cout << mstack.top() << std::endl;
+		mstack.pop();
+		std::cout << mstack.size() << std::endl;
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		//[...]
+		mstack.push(0);
+		MutantStack<int>::iterator it = mstack.begin();
+		MutantStack<int>::iterator ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+		std::stack<int> s(mstack);
+		return 0;
+	}

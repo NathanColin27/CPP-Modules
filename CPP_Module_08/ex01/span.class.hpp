@@ -28,11 +28,38 @@ class Span
 		std::list<int>&	getNumbers(void);
 		// Member functions
 		void	addNumber(int num);
+		void	addNumber(std::list<int>::iterator begin, std::list<int>::iterator end);
 		int		shortestSpan(void);
 		int		longestSpan(void);
 		// Exceptions
 
-};
+
+		class fullSpanException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Span is already full");
+				}
+		};
+		class emptySpanException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Span is empty");
+				}
+		};
+
+		class NoSpanFoundException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("No span found");
+				}
+		};
+};	
 
 
 #endif

@@ -6,13 +6,14 @@
 #    By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/25 22:13:13 by nathan            #+#    #+#              #
-#    Updated: 2021/06/09 12:02:52 by ncolin           ###   ########.fr        #
+#    Updated: 2021/06/09 17:03:09 by ncolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= mutantstack
+NAME			= MutantStack
 
 SRCS			=	main.cpp\
+					MutantStack.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 

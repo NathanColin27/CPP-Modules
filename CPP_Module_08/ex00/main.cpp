@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:21:56 by ncolin            #+#    #+#             */
-/*   Updated: 2021/05/24 15:38:14 by ncolin           ###   ########.fr       */
+/*   Updated: 2021/06/09 15:13:28 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void)
 				l.push_back(i);
 			for (int i = 0; i < 5; i++)
 				std::cout << "list[" << i << "] : " << easyfind(l,i) << std::endl;
-			std::cout << "|NON-EXISTING INDEX|" << std::endl;
+			std::cout  << std::endl << "|NON-EXISTING INDEX|" << std::endl;
 			std::cout << easyfind(l,10) << std::endl;
 		}
 		catch(const std::exception& e)
@@ -54,20 +54,21 @@ int main(void)
 		try
 		{
 			std::cout << "|EMPTY CONTAINER|" << std::endl;
-			std::cout << easyfind(v,0) << std::endl;
+			std::cout  << std::endl << easyfind(v,0) << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
+		
 		try
 		{
-			std::cout << "|FILLED CONTAINER|" << std::endl;
+			std::cout  << std::endl << "|FILLED CONTAINER|" << std::endl;
 			for (int i = 0; i < 5; i++)
 				v.push_back(i);
 			for (int i = 0; i < 5; i++)
 				std::cout << "vector[" << i << "] : " << easyfind(v,i) << std::endl;
-			std::cout << "|NON-EXISTING INDEX|" << std::endl;
+			std::cout << std::endl  << "|NON-EXISTING INDEX|" << std::endl;
 			std::cout << easyfind(v,10) << std::endl;
 		}
 		catch(const std::exception& e)
