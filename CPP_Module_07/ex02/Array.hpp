@@ -20,10 +20,8 @@ class Array
 		}
 		Array(unsigned int n)
 		{
-			_arr = new T[n];
+			_arr = new T[n]();
 			_size = n;
-			for (size_t i = 0; i < this->_size; i++)
-				this->_arr[i] = 0;
 		}
 		Array(const Array &other)
 		{	
